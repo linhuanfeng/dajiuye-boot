@@ -1,0 +1,78 @@
+/* 确认发布的按钮 */
+
+.btn1 {
+    width: 90%;
+    margin-top: 70rpx;
+    margin-bottom: 70rpx;
+    background-color: #09bb07;
+    color: white;
+    font-size: 33rpx;
+    border-radius: 13rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.cu-form-group .title {
+    text-align: justify;
+    padding-right: 30rpx;
+    font-size: 30rpx;
+    position: relative;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.cu-form-group {
+    background-color: var(--white);
+    padding: 1rpx 30rpx;
+    display: flex;
+    align-items: center;
+    min-height: 100rpx;
+    justify-content: space-between;
+}
+
+.borderBottom {
+    border-bottom: 1rpx solid #eee;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-start {
+    justify-content: flex-start;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.cu-form-group input {
+    flex: 1;
+    font-size: 30rpx;
+    color: #555;
+    padding-right: 20rpx;
+}
+
+.jobDetails{
+    padding: 1rpx 30rpx;
+}
+.job_title{
+    text-align: justify;
+    /* padding-right: 30rpx; */
+    font-size: 30rpx;
+    /* position: relative; */
+    height: 60rpx;
+    line-height: 60rpx;
+}
+textarea{
+    font-size: 30rpx;
+    /* position: relative; */
+    height: 160rpx;
+    line-height: 60rpx;
+}

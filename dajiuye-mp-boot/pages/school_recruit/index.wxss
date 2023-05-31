@@ -1,0 +1,48 @@
+.first_tab .goods_item {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+.first_tab .goods_item .goods_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first_tab .goods_item .goods_info_wrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.first_tab .goods_item .goods_info_wrap .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.first_tab .goods_item .goods_info_wrap .goods_price {
+  color: var(--themeColor);
+}
+.orders_wrap {
+  margin-top: 80rpx;
+  position: fixed;
+}
+.orders_wrap .orders_title {
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.orders_wrap .order_content {
+  background-color: #fff;
+  display: flex;
+}
+.orders_wrap .order_content navigator {
+  padding: 15rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.orders_wrap .order_content navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}

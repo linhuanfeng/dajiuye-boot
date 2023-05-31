@@ -1,0 +1,113 @@
+page{
+    height: 100%;
+}
+.cates{
+    height: 100%;
+    .orders_wrap{
+        // 设置为最上层
+        z-index: 999;
+        width: 100%;
+        background-color: rgb(233, 222, 238);
+        // display: none;
+        // margin-top: 0rpx;
+        position: fixed;
+        // background-color: #fff;
+        // margin-top: 30rpx;
+        .orders_title{
+            margin-top: 30rpx;
+            background-color: rgb(236, 155, 155);
+            padding: 20rpx;
+            border-bottom: 1rpx solid #ccc;
+        }
+        .order_content{
+            background-color: rgb(73, 223, 43);
+            display: flex;
+            navigator{
+                padding: 15rpx 0;
+                flex: 1;
+                text-align: center;
+                .iconfont{
+                    color: var(--themeColor);
+                    font-size: 40rpx;
+                }
+            }
+        }
+    }
+    .cates_container{
+        // less 中使用calc的时候要注意
+        height: ~'calc(100vh-90rpx)';
+        // height: 1300rpx;
+        height: 100%;  //为什么没加这一句代码就不能实现scroll-view的滚动
+        display: flex;
+        // 设置不换行
+        white-space: nowrap;
+        .menu{
+            // 紧靠屏幕
+            .menu_item{
+                height: 380rpx;
+                background-color: #edece9;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30rpx;
+                margin-top: 5rpx;
+                // overflow: hidden;
+                // 实际内容
+                .menu_item_wrap{
+                    width: 700rpx;
+                    height: 350rpx;
+                    background-color: #fff;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    // justify-content: center;
+                    // align-items: center;
+                    // 上半部分
+                    .wrap_body{
+                        flex: 6;
+                        // width: 100%;
+                        background-color: rgb(5, 78, 75);
+                        position: relative;
+                        // 包裹图片的最外层
+                        .img_wrap{
+                            background-color: rgb(223, 233, 78);;
+                            width: 100%;
+                            height: 270rpx;
+                            overflow: hidden;
+                            // 包裹图片的最内层
+                            .img{
+                                background-color: rgb(55, 221, 111);
+                                width: 100%;
+                                height: 100%;
+                                // height: 100%;
+                                overflow: hidden;
+                                text-align:center;
+                                margin: 0 auto;
+                                image{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                          
+                        }
+                        // 包裹日期的最外层
+                        .cover_wrap{
+                            position: absolute;
+                            padding: 9rpx 20rpx;
+                            margin-top: -10rpx;
+                            width: 100%;
+                            height: 120rpx;
+                            // color: white;
+                            background-color: white;
+                        }
+                    }  
+                    // 下半部分
+                    .wrap_foot{
+                        flex: 3;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<!-- 职位列表 -->
+<view class="job_list_wrap" wx:for="{{collects}}" wx:key="jobId">
+  <view class="job_list_raw">
+    <navigator class="" target="" url="/pages/job_details/index?jobId={{item.jobId}}" hover-class="navigator-hover" open-type="navigate">
+      <view class="content content_top">
+        <view class="content_top_lft">
+          <!-- 职业名称 -->
+          <view class="job_name">{{item.jobName}}</view>
+          <!-- 职业要求 -->
+          <view class="job_details">
+            <view class="job_city">{{item.jobPlace}}</view>
+            <view class="job_skill">{{item.internshipTime}}</view>
+            <!-- <view class="job_year">{{item.jobAge}}</view> -->
+            <view class="job_edu">{{item.jobEdu}}</view>
+          </view>
+        </view>
+        <!-- 工资 发布时间 -->
+        <view class="content_top_rgt">
+          <view class="job-salary">
+            <view class="job_skill">{{item.jobSalary}}</view>
+          </view>
+          <view class="job_ad">占位</view>
+        </view>
+      </view>
+      <view class="content_btm">
+        <view class="content_btm_lft">
+          <image class="" src="https://t11.baidu.com/it/u=3140861360,148934352&fm=30&app=106&f=JPEG?w=312&h=208&s=383B76975E011B5B5A3BF5750300C068" mode="aspectFill" />
+        </view>
+        <view class="content_btm_rgt">
+          <view class="cbr_top">{{item.company.comMinName}}</view>
+          <view class="cbr_btm">
+            <view class="cbr_btm_lft">
+              <view class="">{{item.company.comField}}|{{item.company.comFinance}}</view>
+            </view>
+            <view class="cbr_btm_rgt">
+              <view class="">13天前</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

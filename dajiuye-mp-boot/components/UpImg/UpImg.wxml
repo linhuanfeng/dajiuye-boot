@@ -1,0 +1,5 @@
+<view class="up_img_wrap">
+    <image class="" src="{{src}}" mode="aspectFill"/>
+    <icon class="" type="clear" size="23" color="red">
+    </icon>
+</view>

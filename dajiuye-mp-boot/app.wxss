@@ -1,0 +1,40 @@
+@import "./styles/iconfont.wxss";
+
+/* 在小程序中不支持通配符‘*’ */
+
+page,
+view,
+text,
+swiper,
+swiper-item,
+image,
+navigator {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* width=content+padding+border(此时，当div的宽度为50%时，而border和padding为px时，
+    那么content会随着实际的宽度进行自动缩放；) */
+}
+
+
+/* 
+    主题颜色 通过变量来实现
+    1 less 中存在变量这个知识
+    2 原生的css和wxss也是支持变量
+*/
+
+page {
+    /* 定义主题颜色 */
+    --themeColor: #2f79e9;
+    /* --themeColor: rgb(30,80,220); */
+    /* 定义统一的字体大小 假设设计稿 大小是375px
+        1px=2rpx
+        14px=28rpx
+    */
+    font-size: 32rpx;
+    font-family: MicroSoft yahei;
+}
+
+image {
+    width: 100%;
+}

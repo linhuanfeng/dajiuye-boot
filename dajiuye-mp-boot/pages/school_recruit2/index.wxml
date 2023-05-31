@@ -1,0 +1,57 @@
+<view class="cates">
+    <SearchInput></SearchInput>
+    <!-- 监听自定义事件 -->
+    <tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+        <!-- <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。 -->
+        <block wx:if="{{tabs[0].isActive}}">
+            <tabs2 tabs="{{tabs2}}" bindtabsItemChange="handleTabsItemChange2">
+                <veiw class="orders_wrap">
+                    <view class="orders_title">学历要求</view>
+                    <view class="order_content">
+                        <navigator class="" target="" url="/pages/order/index?type=1" hover-class="navigator-hover" open-type="navigate">
+                            <view class="order_name">全部订单</view>
+                        </navigator>
+                        <navigator class="" target="" url="/pages/order/index?type=2" hover-class="navigator-hover" open-type="navigate">
+                            <view class="order_name">待收款</view>
+                        </navigator>
+                        <navigator class="" target="" url="/pages/order/index?type=3" hover-class="navigator-hover" open-type="navigate">
+                            <view class="order_name">待收货</view>
+                        </navigator>
+                        <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                            <view class="order_name">退款/退货</view>
+                        </navigator>
+                    </view>
+                </veiw>
+            </tabs2>
+        </block>
+        <block wx:elif="{{tabs[1].isActive}}"></block>
+        <block wx:elif="{{tabs[2].isActive}}"></block>
+    </tabs>
+    <view class="cates_container">
+        <scroll-view scroll-y class="menu">
+            <!-- 紧靠屏幕 -->
+            <view 
+            wx:for="{{schoolList}}"
+                wx:key="schId" 
+            class="menu_item">
+                <!-- 实际内容 -->
+                <navigator url="/pages/school_details/index?schoolId={{item.schId}}" open-type="navigate">
+                    <view class="menu_item_wrap">
+                        <view class="wrap_body">
+                            <view class="img_wrap">
+                                <view class="img">
+                                    <!-- 宽度不变，高自动缩放 -->
+                                    <image mode="top" src="{{item.schImg1}}" alt="" />
+                                </view>
+                            </view>
+                            <view class="cover_wrap">
+                                <view class="name">{{item.schName}}</view>
+                            </view>
+                        </view>
+                        <view class="wrap_foot"></view>
+                    </view>
+                </navigator>
+            </view>
+        </scroll-view>
+    </view>
+</view>

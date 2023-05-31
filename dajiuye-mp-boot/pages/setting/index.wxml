@@ -1,0 +1,6 @@
+<view class="phone_wrap">
+    <button type="primary" plain="{{true}}" open-type="getPhoneNumber" bindgetphonenumber="handleGetPhoneNumber">
+        手机号登录
+    </button>
+</view>
+<view class="exit_wrap" bindtap="userexit">退出当前账号</view>

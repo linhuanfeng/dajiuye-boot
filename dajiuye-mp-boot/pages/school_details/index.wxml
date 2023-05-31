@@ -1,0 +1,19 @@
+<view class="goods_info">
+    <view class="goods_info_title">{{schoolObj.schName}}</view>
+    <view class="sub_title_wrap">
+        <view class="auth">大就业助手</view>
+        <view class="time">{{schoolObj.schUpdateTime}}</view>
+    </view>
+    <view class="goods_info_content">
+        <image wx:if="{{schoolObj.schImg1!==''}}" mode="widthFix"  src="{{schoolObj.schImg1}}"></image>
+        <image  wx:if="{{schoolObj.schImg2!==''}}" mode="widthFix" src="{{schoolObj.schImg2}}"></image>
+        <image  wx:if="{{schoolObj.schImg3!==''}}" mode="widthFix" src="{{schoolObj.schImg3}}"></image>
+        <image  wx:if="{{schoolObj.schImg4!==''}}" mode="widthFix" src="{{schoolObj.schImg4}}"></image>
+        <image  wx:if="{{schoolObj.schImg5!==''}}" mode="widthFix" src="{{schoolObj.schImg5}}"></image>
+    </view>
+</view>
+<view class="btm_tool">
+    <view class="tool_item" bindtap="handleSecKill">
+        <view class="word">加入我们</view>
+    </view>
+</view>

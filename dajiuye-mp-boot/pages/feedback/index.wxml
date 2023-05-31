@@ -1,0 +1,21 @@
+<view class="fb_main">
+    <view class="fb_title">反馈内容</view>
+    <view class="fb_content">
+        <textarea value="{{textVal}}" bindinput="handleTextInput" placeholder="请描述一下您的问题"></textarea>
+        <view class="fb_tool">
+            <button bindtap="handleChooseImg">+</button>
+            <view class="up_img_item" wx:for="{{chooseImgs}}" wx:key="*this" bindtap="handleRemoveImg" data-index="{{index}}">
+                <UpImg src="{{item}}"></UpImg>
+            </view>
+        </view>
+    </view>
+    <view class="fb_title">联系方式</view>
+    <view class="fb_content2">
+        <input value="{{textVal2}}" bindinput="handleTextInput2" type="text" placeholder="可以留下您的手机号或邮箱，方便与您取得联系"/>
+    </view>
+    <view class="form_btn_wrap">
+        <button bindtap="handleFormSubmit" type="warn">
+            提交
+        </button>
+    </view>
+</view>

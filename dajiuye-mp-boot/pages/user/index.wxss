@@ -1,0 +1,140 @@
+page {
+  background-color: #edece9;
+}
+.user_info_wrap {
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.user_info_wrap .user_img_wrap {
+  position: relative;
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 45vh;
+  filter: blur(10rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  text-align: center;
+}
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: #fff;
+  margin-top: 40rpx;
+}
+.user_info_wrap .user_btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  border: 1rpx solid greenyellow;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.user_content {
+  position: relative;
+}
+.user_content .user_main {
+  padding-bottom: 100rpx;
+  color: #666;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+}
+.user_content .user_main .history_wrap {
+  background-color: #fff;
+  display: flex;
+  border-radius: 20rpx;
+}
+.user_content .user_main .history_wrap navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user_content .user_main .history_wrap navigator .his_num {
+  color: var(--themeColor);
+}
+.user_content .user_main .orders_wrap .orders_title {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .orders_wrap .order_content {
+  background-color: #fff;
+  display: flex;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.user_content .user_main .orders_wrap .order_content navigator {
+  padding: 15rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.user_content .user_main .orders_wrap .order_content navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+.user_content .user_main .pre_address {
+  margin-top: 30rpx;
+  border-bottom: 1rpx solid #ccc;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+.user_content .user_main .post_address {
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.user_content .user_main .address_wrap {
+  background-color: #fff;
+  padding: 20rpx;
+}
+.user_content .user_main .app_info_wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.user_content .user_main .app_info_wrap .tool_item {
+  padding: 20rpx;
+  display: flex;
+  padding-left: 20rpx;
+  position: relative;
+  margin: 0;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .app_info_wrap .tool_item .pre_icon-kefu {
+  margin-right: 15rpx;
+}
+.user_content .user_main .app_info_wrap .tool_item button {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.user_content .user_main .app_info_wrap .app_info_item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .app_info_wrap .app_info_contact {
+  display: flex;
+  justify-content: space-between;
+}
+.user_content .user_main .recommend_wrap {
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}

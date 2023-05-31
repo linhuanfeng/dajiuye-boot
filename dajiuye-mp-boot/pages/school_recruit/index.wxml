@@ -1,0 +1,61 @@
+<SearchInput ></SearchInput>
+
+<tabs2 tabs="{{tabs2}}" bindtabsItemChange="handleTabsItemChange2">
+            <!-- 我的订单 -->
+        <veiw class="orders_wrap">
+            <view class="orders_title">我的订单</view>
+            <view class="order_content">
+                <navigator class="" target="" url="/pages/order/index?type=1" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-ding_dan"></view>
+                    <view class="order_name">全部订单</view>
+                </navigator>
+                <navigator class="" target="" url="/pages/order/index?type=2" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-fukuantongzhi"></view>
+                    <view class="order_name">待收款</view>
+                </navigator>
+                <navigator class="" target="" url="/pages/order/index?type=3" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-receipt-address"></view>
+                    <view class="order_name">待收货</view>
+                </navigator>
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-tuihuotuikuan_dianpu"></view>
+                    <view class="order_name">退款/退货</view>
+                </navigator>
+            </view>
+        </veiw>
+      
+</tabs2>
+
+
+<!-- 监听自定义事件 -->
+<tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <!-- <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。 -->
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"
+            wx:for="{{goodsList}}"
+            wx:key="goods_id"
+            url="/pages/goods_details/index?goods_id={{item.goods_id}}"
+            >
+                <!-- 左侧 图片容器 -->
+                <view class="goods_img_wrap">
+                    <image mode="widthFix" class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F18%2F06%2F09%2F77b739688815baaef48ec18a676a1488.jpg&refer=http%3A%2F%2Fbpic.588ku.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628952688&t=6ecb49f7acebd8bfbc84f7ddde10d89f'}}" lazy-load="false" binderror="" bindload="" />
+                      
+                </view>
+                <!-- 右侧 商品容器 -->
+                <view class="goods_info_wrap">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_price">{{item.goods_price}}</view>
+                </view>
+            </navigator>
+           
+        </view>
+    </block>
+      <block wx:elif="{{tabs[1].isActive}}">
+        1
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+        2
+    </block>
+
+</tabs>

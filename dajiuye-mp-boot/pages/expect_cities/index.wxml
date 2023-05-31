@@ -1,0 +1,30 @@
+<view class="cates">
+    <!-- <SearchInput></SearchInput> -->
+    <view class="expJobWrap">
+        <view class="pre_expectJob" wx:if="{{expectCities.length==0}}">最多选择三个</view>
+        <view class="expectJob" wx:for="{{expectCities}}" wx:for-index="index" wx:key="id" bindtap="handleItemTapHead" data-index="{{index}}">
+            <view class="content">{{item.cityName}}</view>
+            <view class="del iconfont icon-cuowu"></view>
+        </view> 
+    </view>
+    <view class="cates_container">
+        <!-- 左侧菜单 -->
+        <scroll-view scroll-y class="left_menu" bind:scroll="scrollTop" bindscrolltoupper="bindscrolltoupper">
+            <view class="{{top>1?'topnav':''}}" class="menu_item {{index===currentIndex?'active':''}} {{index===leftMenuList.length-1?'lf_last':''}}" wx:for="{{leftMenuList}}" wx:key="*this" bindtap="handleItemTap" data-index="{{index}}">
+                {{item}}
+            </view>
+        </scroll-view>
+        <!-- 右侧商品内容 -->
+        <scroll-view  class="right_contents" scroll-top="{{scrollTop}}" scroll-y="{{true}}">
+            <view class="goods_list">
+                <view class="{{item1.isSelect?'activeJob':''}}" wx:for="{{rightContent}}" wx:key="id" bindtap="handleItemTapJob" data-index1="{{index1}}"  wx:for-index="index1" wx:for-item="item1">
+                    {{item1.cityName}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="btm_tool">
+    <view class="btn_submit" bindtap="handleExpectJobs">确定</view>
+</view>
+  

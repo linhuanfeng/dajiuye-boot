@@ -1,0 +1,70 @@
+<form catchsubmit="confirmPublish">
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">
+      职位名称
+    </view>
+    <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+      <input maxlength="15" placeholder="请输入职位名称"  data-name="jobName" bindblur="setInput"></input>
+    </view>
+  </view>
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">
+      行业分类
+    </view>
+    <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+      <input maxlength="15" placeholder="请输入所属行业" value="{{interviewee}}" data-name="jobIndustry" bindblur="setInput"></input>
+    </view>
+  </view>
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">
+      工作城市
+    </view>
+    <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+      <input maxlength="15" placeholder="请输入工作城市" value="{{interviewee}}" data-name="jobPlace" bindblur="setInput"></input>
+    </view>
+  </view>
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">学历要求
+    </view>
+    <picker class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;font-size: 30rpx;color: #555;" bindchange="bindPickerJobEdu" value="{{index1}}" range="{{visitCausearray}}">
+      <view class="picker">
+        {{visitCausearray[index1]}}
+      </view>
+    </picker>
+  </view>
+  <view class="jobDetails">
+    <view class="job_title">
+      专业技能
+    </view>
+    <view class="">
+      <textarea maxlength="15" placeholder="请输入你的专业技能" value="{{idNumber}}" data-name="jobDetails" bindblur="setInput"></textarea>
+    </view>
+  </view>
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">
+      薪资详情
+    </view>
+    <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+      <input maxlength="15" placeholder="请输入薪资详情" value="{{phone}}" data-name="jobSalary" bindblur="setInput"></input>
+    </view>
+  </view>
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">职位类型
+    </view>
+    <picker class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;font-size: 30rpx;color: #555;" bindchange="bindPickerJobType" value="{{index2}}" range="{{organarray}}">
+      <view class="picker">
+        {{organarray[index2]}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group margin-top">
+    <view class="title d-flex">
+      专业全称
+    </view>
+    <view class="w-100 h-100 borderBottom flex-1 d-flex jc-start ai-center" style="height:100rpx;">
+      <input maxlength="15" placeholder="请输入你的专业全称" value="{{phone}}" data-name="email" bindblur="setInput"></input>
+    </view>
+  </view>
+  <button class='btn1' bindtap="bindViewTapsuccess" form-type="submit">开始定制</button>
+
+</form>

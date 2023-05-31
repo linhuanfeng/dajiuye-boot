@@ -1,0 +1,15 @@
+<view>
+<image src="https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/%E7%BE%A4%281%29.png" mode="aspectFit"></image>
+</view>
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-yixianshi-"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <view class="tool_item" bindtap="handleCollectAdd">
+        <view class="iconfont  {{isCollect?'icon-shoucang':'icon-shou_cang'}}"></view>
+        <view>收藏</view>
+    </view>
+    <!-- <view class="tool_item btn_buy" id="{{submit_stat=='立即投递'?'':'isSubmit'}}" bindtap="touchphoto">{{submit_stat}}</view> -->
+</view>

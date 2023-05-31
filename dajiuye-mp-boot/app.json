@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/analysis/index",
+    "pages/category_job/index",
+    "pages/company_home/index",
+    "pages/expect_cities/index",
+    "pages/expect_jobs/index",
+    "pages/jobs_list/index",
+    "pages/school_details/index",
+    "pages/cart/index",
+    "pages/collect/index",
+    "pages/order/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/feedback/index",
+    "pages/feedback_job/index",
+    "pages/login/index",
+    "pages/auth/index",
+    "pages/pay/index",
+    "pages/job_details/index",
+    "pages/job_publish/index",
+    "pages/school_recruit/index",
+    "pages/school_recruit2/index",
+    "pages/resume/index",
+    "pages/setting/index",
+    "pages/message/index",
+    "pages/article_details/index",
+    "pages/question_details/index",
+    "pages/dialog/index",
+    "pages/customized/index",
+    "pages/customized_res/index",
+    "pages/recruit/index",
+    "pages/recruit_detail/index",
+    "pages/recruit_old/index",
+    "pages/community/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2f79e9",
+    "navigationBarTitleText": "大就业",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#000",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-o.png"
+      },
+      {
+        "pagePath": "pages/category_job/index",
+        "text": "分类",
+        "iconPath": "icons/category.png",
+        "selectedIconPath": "icons/category-o.png"
+      },
+
+      {
+        "pagePath": "pages/message/index",
+        "text": "消息",
+        "iconPath": "icons/msg.png",
+        "selectedIconPath": "icons/msg-o.png"
+      },
+      {
+        "pagePath": "pages/recruit/index",
+        "text": "招人",
+        "iconPath": "icons/analysis.png",
+        "selectedIconPath": "icons/analysis-o.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-o.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "functionalPages": {
+    "independent": true
+  }
+}

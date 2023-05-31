@@ -1,0 +1,12 @@
+<view class="search_row">
+    <input value="{{inpValue}}" bindinput="handleInput" placeholder="请输入搜索内容" type="text">搜索</input>
+    <button bindtap="handelCancel" hidden="{{!isFocus}}">取消</button>
+</view>
+<view class="search_content">
+    <navigator url="/pages/job_details/index?jobId={{item.jobId}}" class="search_item" 
+    wx:for="{{goods.list}}" 
+    wx:key="jobId"
+    >
+    {{item.company.comMinName}}---- {{ item.jobName }}----{{item.jobPlace}}
+    </navigator>
+</view>

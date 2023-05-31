@@ -1,0 +1,32 @@
+<SearchInput ></SearchInput>
+<!-- 监听自定义事件 -->
+<tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"
+            wx:for="{{goodsList}}"
+            wx:key="goods_id"
+            url="/pages/goods_details/index?goods_id={{item.goods_id}}"
+            >
+                <!-- 左侧 图片容器 -->
+                <view class="goods_img_wrap">
+                    <image mode="widthFix" class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F18%2F06%2F09%2F77b739688815baaef48ec18a676a1488.jpg&refer=http%3A%2F%2Fbpic.588ku.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628952688&t=6ecb49f7acebd8bfbc84f7ddde10d89f'}}" lazy-load="false" binderror="" bindload="" />
+                      
+                </view>
+                <!-- 右侧 商品容器 -->
+                <view class="goods_info_wrap">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_price">{{item.goods_price}}</view>
+                </view>
+            </navigator>
+           
+        </view>
+    </block>
+      <block wx:elif="{{tabs[1].isActive}}">
+        1
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+        2
+    </block>
+
+</tabs>

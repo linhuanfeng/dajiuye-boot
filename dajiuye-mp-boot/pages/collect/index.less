@@ -1,0 +1,99 @@
+// 职位列表
+.job_list_wrap {
+    display: flex;
+    justify-content: center;
+    padding: 10rpx;
+    border-bottom: 1px solid #ccc;
+
+    .job_list_raw {
+        width: 95%;
+        display: flex;
+
+        navigator {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .content_top {
+                flex: 1;
+                margin-top: 0rpx;
+                display: flex;
+                justify-content: space-between;
+
+                .content_top_lft {
+                    .job_name {
+                        font-size: 45rpx;
+                        font-weight: 600;
+                        color: rgb(22, 22, 22);
+                    }
+
+                    .job_details {
+                        margin-top: 0rpx;
+                        display: flex;
+                        justify-content: flex-start;
+
+                        view {
+                            padding: 5rpx 8rpx;
+                            margin-right: 10rpx;
+                            background-color: rgba(128, 124, 124, 0.2);
+                        }
+                    }
+                }
+
+                .content_top_rgt {
+                    .job-salary {
+                        font-size: 40rpx;
+                        color: var(--themeColor);
+                    }
+
+                    .job_ad {
+                        margin-top: 20rpx;
+                        float: right;
+                    }
+                }
+            }
+
+            .content_btm {
+                flex: 1;
+                // background-color: rgba(128, 124, 124, 0.2);
+                display: flex;
+                justify-content: space-between;
+
+                .content_btm_lft {
+                    flex: 1;
+
+                    image {
+                        float: left;
+                        width: 70rpx;
+                        height: 70rpx;
+                        border-radius: 30%;
+                        margin-right: 20rpx;
+                    }
+                }
+
+                .content_btm_rgt {
+                    flex: 7;
+                    display: flex;
+                    flex-direction: column;
+
+                    .cbr_top {
+                        flex: 1;
+                    }
+
+                    .cbr_btm {
+                        flex: 1;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .cbr_btm_lft {
+                            display: flex;
+                            justify-content: start;
+                        }
+
+                        .cbr_btm_rgt {}
+                    }
+                }
+            }
+        }
+    }
+}

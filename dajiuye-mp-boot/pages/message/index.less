@@ -1,0 +1,105 @@
+.index_cate{
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    background-color: #fff;
+    // background-color: rgb(241, 128, 128);
+    border-bottom: 5rpx solid rgb(243, 239, 239);
+    // margin-bottom: 6rpx;
+    // border-bottom: 1px solid rgb(146, 139, 139);
+    // padding: 20rpx 0;
+    margin-top: 20rpx;
+    navigator{
+        // padding: 300rpx 20rpx 0rx 20rpx;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        image{
+            flex: 1;
+            // width: 100%;
+            width: 90rpx;
+        }
+        view{
+            flex: 1;
+        }
+    }
+}
+.msg_wrap{
+    width: 100%;
+    padding: 37rpx;
+    .msg_raw{
+        display: flex;
+        border-bottom: 1rpx solid rgb(90, 81, 81);
+        .msg_img{
+            image{
+                width: 100rpx;
+                height: 100rpx;
+            }
+        }
+        .msg_content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30rpx;
+            // align-items: center;
+            .nickName{
+                font-size: 40rpx;
+                // background-color: rgb(235, 133, 133);
+            }
+            .news{
+                font-size: 30rpx;
+                // background-color: rgb(205, 224, 117);
+            }
+        }
+
+    }
+
+}
+// 通知栏
+@keyframes remindMessage {
+    0% {
+      -webkit-transform: translateX(90%);
+    }
+  
+    100% {
+      -webkit-transform: translateX(-180%);
+    }
+  }
+  
+  .tongzhitext {
+    margin-right:80rpx;
+    margin-left: 10rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .tongzhi-text {
+    font-size: 28rpx;
+    animation: remindMessage 14s linear infinite;
+    width: 100%;
+    color: #d09868;
+    display: block;
+  }
+  
+  .notice-wrap {
+    background: #ffebda;
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #d09868;
+    font-size: 28rpx;
+  }
+  
+  .closeView {
+    width: 45rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 5rpx;
+    text-align: center;
+    font-size: 35rpx;
+  }

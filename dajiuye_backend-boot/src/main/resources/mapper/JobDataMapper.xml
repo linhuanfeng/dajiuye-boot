@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--这里的namespace和mapper里面接口方法全限定名对应好就可以自动联系-->
+<mapper namespace="com.lhf.dajiuye.mapper.job.JobDataMapper">
+    <resultMap id="comMap" type="com.lhf.dajiuye.bean.job.Company">
+        <id column="comId" property="comId"></id>
+        <result column="comFullName" property="comFullName"/>
+        <result column="comAuthCapital" property="comAuthCapital"/>
+        <result column="comIndustry" property="comIndustry"/>
+        <result column="comMail" property="comMail"/>
+        <result column="comAddr" property="comAddr"/>
+        <result column="comWebsite" property="comWebsite"/>
+        <result column="comIntro" property="comIntro"/>
+        <result column="comMinName" property="comMinName"/>
+        <result column="comScale" property="comScale"/>
+        <result column="comLicense" property="comLicense"/>
+        <result column="comLogo" property="comLogo"/>
+        <result column="comClass" property="comClass"/>
+        <result column="IncorporationDate" property="IncorporationDate"/>
+        <result column="comWelfare" property="comWelfare"/>
+        <result column="comLinks" property="comLinks"/>
+    </resultMap>
+    <resultMap id="jobMap" type="com.lhf.dajiuye.bean.job.Job">
+        <id column="jobId" property="jobId"></id>
+        <result column="jobSalary" property="jobSalary"/>
+        <result column="jobName" property="jobName"/>
+        <result column="jobPlace" property="jobPlace"/>
+        <result column="jobEdu" property="jobEdu"/>
+        <result column="jobAge" property="jobAge"/>
+        <result column="jobDayPerWeek" property="jobDayPerWeek"/>
+        <result column="jobImg" property="jobImg"/>
+        <result column="jobComId" property="jobComId"/>
+        <result column="jobUpdateTime" property="jobUpdateTime"/>
+        <result column="jobReleaseTime" property="jobReleaseTime"/>
+        <result column="email" property="email"/>
+        <result column="jobAuthorId" property="jobAuthorId"/>
+        <result column="jobDetails" property="jobDetails"/>
+        <result column="jobStat" property="jobStat"/>
+        <result column="jobViewCnt" property="jobViewCnt"/>
+        <result column="jobPriority" property="jobPriority"/>
+        <result column="jobIndustry" property="jobIndustry"/>
+        <result column="jobTimeSpan" property="jobTimeSpan"/>
+        <result column="jobDeadLine" property="jobDeadLine"/>
+        <result column="jobWelfare" property="jobWelfare"/>
+        <result column="jobType" property="jobType"/>
+        <association column="company" property="company" javaType="com.lhf.dajiuye.bean.job.Company" resultMap="comMap">
+        </association>
+    </resultMap>
+</mapper>

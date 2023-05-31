@@ -1,0 +1,7 @@
+var sub = function(val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+    return val.substring(5, 10);
+}
+module.exports.sub = sub;

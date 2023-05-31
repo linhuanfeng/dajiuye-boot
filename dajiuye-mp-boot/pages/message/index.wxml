@@ -1,0 +1,37 @@
+<!-- 导航开始 -->
+<view class="index_cate">
+  <navigator url="/pages/feedback_job/index" open-type="navigate">
+    <image mode="widthFix" src="https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/c09c1c7ce97347509ffeef1e9ea463b6_2021-11-24%2020%3A40%3A58-%E5%9C%88%E5%AD%90.jpg"></image>
+    <view>我的投递</view>
+  </navigator>
+  <navigator url="{{item.navigatorUrl}}" open-type="navigate">
+    <image mode="widthFix" src="https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/c09c1c7ce97347509ffeef1e9ea463b6_2021-11-24%2020%3A40%3A58-%E5%9C%88%E5%AD%90.jpg"></image>
+    <view>社区消息</view>
+  </navigator>
+  <navigator url="{{item.navigatorUrl}}" open-type="navigate">
+    <image mode="widthFix" src="https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/c09c1c7ce97347509ffeef1e9ea463b6_2021-11-24%2020%3A40%3A58-%E5%9C%88%E5%AD%90.jpg"></image>
+    <view>小助手</view>
+  </navigator>
+</view>
+<!-- 导航结束 -->
+<!-- 公告轮播效果d -->
+<view>
+  <view class='notice-wrap'>
+    <view class='tongzhitext'>
+      <text class="tongzhi-text">{{notice}}</text>
+    </view>
+  </view>
+</view>
+<view class="msg_wrap">
+  <view class="msg_raw" wx:for="{{allMessage}}" wx:key="createTime" wx:for-index="index" bindtap="setList" data-msgs="{{index}}">
+    <view class="msg_img">
+      <image src="{{item[0].fromAvatar==userInfo.avatar?item[0].toAvatar:item[0].fromAvatar}}"></image>
+    </view>
+    <view class="msg_content">
+      <view class="nickName">
+        {{item[0].toName==userInfo.nickName?item[0].fromName:item[0].toName}}
+      </view>
+      <view class="news">{{item[0].news}}</view>
+    </view>
+  </view>
+</view>

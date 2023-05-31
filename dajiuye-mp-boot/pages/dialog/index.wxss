@@ -1,0 +1,140 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 27rpx;
+  letter-spacing: 2rpx;
+  font-family: MicroSoft yahei;
+  padding-top: 140rpx;
+}
+.head {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.head .name {
+  padding: 10rpx 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.head .title {
+  padding: 10rpx;
+  background-color: rgba(223, 222, 222, 0.4);
+}
+.cates {
+  height: 90%;
+}
+.cates .cates_container {
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+  background-color: rgba(223, 222, 222, 0.4);
+}
+.cates .cates_container .left_menu {
+  width: 100%;
+  overflow: hidden;
+}
+.cates .cates_container .left_menu .per_msg {
+  display: flex;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  justify-content: center;
+}
+.cates .cates_container .left_menu .per_msg .per_img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rpx;
+}
+.cates .cates_container .left_menu .per_msg .per_img image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+.cates .cates_container .left_menu .per_msg .per_cnt {
+  flex: 3;
+  padding: 0rpx;
+  display: inline-block;
+  white-space: pre-wrap;
+}
+.cates .cates_container .left_menu .per_msg .per_cnt view {
+  background-color: #fff;
+  padding: 15rpx;
+}
+.cates .cates_container .right_contents {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 30rpx;
+}
+.cates .cates_container .right_contents .per_msg {
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  justify-content: center;
+}
+.cates .cates_container .right_contents .per_msg .per_img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rpx;
+}
+.cates .cates_container .right_contents .per_msg .per_img image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+.cates .cates_container .right_contents .per_msg .per_cnt {
+  flex: 3;
+  padding: 0rpx;
+  display: inline-block;
+  white-space: pre-wrap;
+}
+.cates .cates_container .right_contents .per_msg .per_cnt view {
+  background-color: #fff;
+  padding: 15rpx;
+}
+.btm_wrap {
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 8%;
+}
+.btm_wrap .btm_raw {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(223, 222, 222, 0.4);
+}
+.btm_wrap .btm_raw .btm_name {
+  height: 100%;
+  float: left;
+  padding: 3rpx;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btm_wrap .btm_raw .btm_name input {
+  padding-left: 10rpx;
+  font-size: 34rpx;
+  width: 90%;
+  height: 80%;
+  background-color: rgba(223, 222, 222, 0.4);
+  border-radius: 20rpx;
+}
+.btm_wrap .btm_raw .btm_submit {
+  height: 100%;
+  width: 220rpx;
+  float: right;
+  padding: 50rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btm_wrap .btm_raw .btm_submit button {
+  background-color: rgba(223, 222, 222, 0.4);
+  width: 200rpx;
+  height: 100rpx;
+  color: #000;
+}

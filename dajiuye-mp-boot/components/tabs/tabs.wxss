@@ -1,0 +1,68 @@
+.tabs {
+    width: 100%;
+}
+
+.item_fix {
+    top: 0;
+    position: fixed;
+    z-index: 99;
+}
+
+
+/* 导航栏到达小程序顶端时，由于position变成fixed,其flex属性就失效了 */
+
+.item_fix .title_item {
+    /* width: 280rpx; */
+    width: 25%;
+}
+
+.tabs_title {
+    width: 100%;
+    display: flex;
+    /* border-bottom: 1rpx rgba(1, 1, 1, 0) solid; */
+}
+
+.title_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    letter-spacing: 8rpx;
+    flex: 1;
+    padding: 15rpx 0;
+    background-color: #FFF;
+    border-bottom: 6rpx rgba(1, 1, 1, 0) solid;
+}
+
+
+/* .title_item_below {
+    border-bottom: 1rpx rgba(1, 1, 1, 0) solid;
+} */
+
+.active {
+    font-weight: bold;
+    color: var(--themeColor);
+    border-bottom: 6rpx var(--themeColor) solid;
+}
+
+@font-face {
+    font-family: "iconfont";
+    /* Project id 2666133 */
+    src: url('//at.alicdn.com/t/font_2666133_cl1c70rji8o.woff2?t=1629276642138') format('woff2'), url('//at.alicdn.com/t/font_2666133_cl1c70rji8o.woff?t=1629276642138') format('woff'), url('//at.alicdn.com/t/font_2666133_cl1c70rji8o.ttf?t=1629276642138') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiantouarrow492:before {
+    content: "\e6b0";
+}
+
+.icon-jiantouarrow486:before {
+    content: "\e6aa";
+}

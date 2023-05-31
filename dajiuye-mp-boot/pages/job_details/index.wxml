@@ -1,0 +1,92 @@
+<view class="head">
+    <view class="job_up">
+        <view class="job_name">{{jobObj.jobName}}</view>
+        <view class="job_salary">{{jobObj.jobSalary}}</view>
+    </view>
+    <view class="job_down">
+        <view class="job_place">
+            <text decode="{{true}}">广州&nbsp;|&nbsp;</text>
+        </view>
+        <view class="job_year padr">
+            <text decode="{{true}}">实习要求：{{jobObj.jobDayPerWeek}}&nbsp;{{jobObj.jobTimeSpan}}</text>
+        </view>
+        <view class="job_edu padr">
+            <text decode="{{true}}">&nbsp;|&nbsp;{{jobObj.jobEdu}}</text>
+        </view>
+    </view>
+</view>
+<!-- 公司介绍 -->
+<navigator url="/pages/company_home/index?comId={{jobObj.jobComId}}" class="com_wrap">
+    <view class="com">
+        <view class="content_btm_lft">
+            <image class="" src="{{jobObj.company.comLogo}}" mode="aspectFill" />
+        </view>
+        <view class="content_btm_rgt">
+            <view class="cbr_top">{{jobObj.company.comMinName}}</view>
+            <view class="cbr_btm">
+                <view class="cbr_btm_lft">
+                    <view class="l1">
+                        <text decode="{{true}}">
+                            {{jobObj.company.comIndustry}}&nbsp;|&nbsp;{{jobObj.company.comScale}}
+                        </text>
+                    </view>
+                </view>
+                <view class="cbr_btm_rgt">
+                    <view class="">
+                        <text>></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</navigator>
+<view class="job_desc">
+    <view class="desc_title">岗位详情</view>
+    <view class="desc_details">
+        <rich-text nodes="{{jobObj.jobDetails}}"></rich-text>
+        <!-- <text>{{jobObj.jobDetails}}</text> -->
+    </view>
+</view>
+<view class="Interview_loca">
+    <view class="loca_title">工作城市</view>
+    <view class="loca_details">{{jobObj.jobPlace}}</view>
+</view>
+<!-- <view class="sim">推荐职位</view> -->
+<!-- 职位列表 -->
+
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-yixianshi-"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <view class="tool_item" bindtap="handleCollectAdd">
+        <view class="iconfont  {{isCollect?'icon-shoucang':'icon-shou_cang'}}"></view>
+        <view>收藏</view>
+    </view>
+    <view class="tool_item btn_buy" id="{{submit_stat=='立即投递'?'':'isSubmit'}}" bindtap="resumeSubmit">
+        {{submit_stat}}
+    </view>
+</view>
+<!-- <button catchtap='clickPup'>点击底部动画弹窗</button> -->
+<!-- 底部弹窗动画的内容 -->
+<view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}'
+    hover-stop-propagation='true' catchtouchmove='true'>
+    <!-- <view class='pupContent-top'> -->
+    <view class="resume_head">选择简历</view>
+    <view class="resume_wrap">
+        <view class="raw" bindtap="openFile">
+            <!-- <view class="iconfont  {{isChosen?'icon-shoucang':'icon-shou_cang'}}"></view> -->
+            <view class="img iconfont icon-ding_dan"></view>
+            <view class="cnt">
+                <view class="name">{{resumeName}}</view>
+                <view class="time">{{resumeTime}}更新</view>
+            </view>
+        </view>
+    </view>
+    <view class="tool_item btn_buy" id="{{submit_stat=='立即投递'?'':'isSubmit'}}" bindtap="sendResume">
+        {{submit_stat}}
+    </view>
+</view>
+<!-- 固定的背景 -->
+<view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'></view>

@@ -1,0 +1,246 @@
+<!-- 引入wxs脚本 -->
+<wxs src="../../utils/subutil.wxs" module="tools" />
+<view class="pyg_index">
+  <!-- 搜索框开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框结束 -->
+  <!-- 轮播图开始 -->
+  <view class="index_swiper">
+    <!-- 1 swiper 标签存在默认的框度和高度
+        100% * 150px
+      2 image 标签也存在默认的宽度和高度
+        320px *240px
+      3 设计图片和轮播图
+        1 先看一下原图的宽高 750*340
+        2 让图片自适应 宽度等于100%
+        3 让swiper标签的高度变成和图片的高一样
+      4 图片标签
+        mode属性渲染模式
+          widthFix 让图片的标签宽高和图片标签的内容的宽高都等比例的发生变化 -->
+    <swiper autoplay="{{true}}" indicator-dots="{{true}}" indicator-active-color="#831292" circular="{{true}}" interval="2000">
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <navigator class="" target="" url="/pages/school_details/index?schoolId={{item.goodsId}}" hover-class="navigator-hover" open-type="navigate">
+          <image mode="widthFix" src="{{item.imageSrc}}" />
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图结束 -->
+  <!-- 导航开始 -->
+  <view class="index_cate">
+    <navigator wx:for="{{catesList}}" wx:key="name" wx:for-index="index" url="{{item.navigatorUrl}}" open-type="navigate">
+      <image mode="widthFix" src="{{item.imageSrc}}"></image>
+      <view>{{item.name}}</view>
+    </navigator>
+  </view>
+  <!-- 导航结束 -->
+  <!-- 职位匹配 -->
+  <view class="job_wrap">
+    <view class="job_title_raw">
+      <view class="job_title">
+        <view class="txt01">职位匹配</view>
+        <view class="txt02">为你量身打造推荐职位</view>
+      </view>
+      <view class="job_icon ">
+        <navigator class="" target="" url="/pages/customized/index" hover-class="navigator-hover" open-type="navigate">
+          <view class="iconfont icon-xianxingtubiaozhizuomoban-01"></view>
+          <view class="icon_below">点击定制</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 职位列表 -->
+  <tabs id="mytabs" tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <!-- 下面的全部内容应该都会插入到slot中 -->
+    <!-- <view class="{{curClass}} " id="location_id">我平时到寒兰阿斯达三大大师</view> -->
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/job_details/index?jobId={{item.jobId}}&jobType={{item.jobType}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.jobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.jobPlace!=''}}">{{item.jobPlace}}</view>
+                    <view class="job_skill" wx:if="{{item.jobDayPerWeek!=''}}">{{item.jobDayPerWeek}}</view>
+                    <!-- <view class="job_year">{{item.jobAge}}</view> -->
+                    <view class="job_edu" wx:if="{{item.jobEdu!=''}}">{{item.jobEdu}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.jobSalary}}</view>
+                  </view>
+                  <view class="job_ad">{{tools.sub(item.jobReleaseTime)}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.company.comMinName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.company.comIndustry}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- 另一个列表############################################################################################################ -->
+    <block wx:elif="{{tabs[1].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/job_details/index?jobId={{item.jobId}}&jobType={{item.jobType}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.jobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.jobPlace!=''}}">{{item.jobPlace}}</view>
+                    <view class="job_skill" wx:if="{{item.jobDayPerWeek!=''}}">{{item.jobDayPerWeek}}</view>
+                    <!-- <view class="job_year">{{item.jobAge}}</view> -->
+                    <view class="job_edu" wx:if="{{item.jobEdu!=''}}">{{item.jobEdu}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.jobSalary}}</view>
+                  </view>
+                  <view class="job_ad">{{tools.sub(item.jobReleaseTime)}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/779ff95e32174d3782251c320d75f4c4_2021-12-12%2014%3A21%3A46-%E9%80%9A%E7%94%A82.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.company.comMinName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.company.comIndustry}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/job_details/index?jobId={{item.jobId}}&jobType={{item.jobType}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.jobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.jobPlace!=''}}">{{item.jobPlace}}</view>
+                    <view class="job_skill" wx:if="{{item.jobDayPerWeek!=''}}">{{item.jobDayPerWeek}}</view>
+                    <!-- <view class="job_year">{{item.jobAge}}</view> -->
+                    <view class="job_edu" wx:if="{{item.jobEdu!=''}}">{{item.jobEdu}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.jobSalary}}</view>
+                  </view>
+                  <view class="job_ad">{{tools.sub(item.jobReleaseTime)}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/779ff95e32174d3782251c320d75f4c4_2021-12-12%2014%3A21%3A46-%E9%80%9A%E7%94%A82.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.company.comMinName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.company.comIndustry}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[3].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/job_details/index?jobId={{item.jobId}}&jobType={{item.jobType}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.jobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.jobPlace!=''}}">{{item.jobPlace}}</view>
+                    <view class="job_skill" wx:if="{{item.jobDayPerWeek!=''}}">{{item.jobDayPerWeek}}</view>
+                    <!-- <view class="job_year">{{item.jobAge}}</view> -->
+                    <view class="job_edu" wx:if="{{item.jobEdu!=''}}">{{item.jobEdu}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.jobSalary}}</view>
+                  </view>
+                  <view class="job_ad">{{tools.sub(item.jobReleaseTime)}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/628d945aa6ea4607b3e07fc3333fce14_2021-12-12%2014%3A23%3A43-%E9%80%9A%E7%94%A83.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.company.comMinName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.company.comIndustry}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </tabs>
+</view>

@@ -1,0 +1,256 @@
+<!-- 引入wxs脚本 -->
+<wxs src="../../utils/subutil.wxs" module="tools" />
+<view class="pyg_index">
+  <!-- 搜索框开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框结束 -->
+  <!-- 职位匹配 -->
+  <view class="job_wrap">
+    <view class="job_title_raw">
+      <view class="job_title">
+        <view class="txt01">发布职位</view>
+        <view class="txt02">帮你招聘高端人才</view>
+      </view>
+      <view class="job_icon ">
+        <navigator class="" target="" url="/pages/job_publish/index" hover-class="navigator-hover" open-type="navigate">
+          <view class="iconfont icon-xianxingtubiaozhizuomoban-01"></view>
+          <view class="icon_below">点击发布</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 职位列表 -->
+  <tabs id="mytabs" tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <!-- 下面的全部内容应该都会插入到slot中 -->
+    <!-- <view class="{{curClass}} " id="location_id">我平时到寒兰阿斯达三大大师</view> -->
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/recruit_detail/index?jobId={{item.tempDeliverId}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.tempJobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.university!=''}}">{{item.university}}</view>
+                    <view class="job_skill" wx:if="{{item.qualification!=''}}">{{item.qualification}}</view>
+                    <view class="job_edu" wx:if="{{item.graduationYear!=''}}">{{item.graduationYear}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.tempDeliverTime}}</view>
+                  </view>
+                  <view class="job_ad">{{item.company.comIndustry}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.avatar?item.avatar:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.nickName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.honor}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- 另一个列表############################################################################################################ -->
+    <block wx:elif="{{tabs[1].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/recruit_detail/index?jobId={{item.tempDeliverId}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.tempJobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.university!=''}}">{{item.university}}</view>
+                    <view class="job_skill" wx:if="{{item.qualification!=''}}">{{item.qualification}}</view>
+                    <view class="job_edu" wx:if="{{item.graduationYear!=''}}">{{item.graduationYear}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.tempDeliverTime}}</view>
+                  </view>
+                  <view class="job_ad">{{item.company.comIndustry}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.avatar?item.avatar:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.nickName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.honor}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/recruit_detail/index?jobId={{item.tempDeliverId}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.tempJobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.university!=''}}">{{item.university}}</view>
+                    <view class="job_skill" wx:if="{{item.qualification!=''}}">{{item.qualification}}</view>
+                    <view class="job_edu" wx:if="{{item.graduationYear!=''}}">{{item.graduationYear}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.tempDeliverTime}}</view>
+                  </view>
+                  <view class="job_ad">{{item.company.comIndustry}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.avatar?item.avatar:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.nickName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.honor}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[3].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/recruit_detail/index?jobId={{item.tempDeliverId}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.tempJobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.university!=''}}">{{item.university}}</view>
+                    <view class="job_skill" wx:if="{{item.qualification!=''}}">{{item.qualification}}</view>
+                    <view class="job_edu" wx:if="{{item.graduationYear!=''}}">{{item.graduationYear}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.tempDeliverTime}}</view>
+                  </view>
+                  <view class="job_ad">{{item.company.comIndustry}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.avatar?item.avatar:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.nickName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.honor}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[4].isActive}}">
+      <view class="first_tab">
+        <!-- 职位列表 -->
+        <view class="job_list_wrap" wx:for="{{jobList}}" wx:key="jobId">
+          <view class="job_list_raw">
+            <navigator class="" target="" url="/pages/recruit_detail/index?jobId={{item.tempDeliverId}}" hover-class="navigator-hover" open-type="navigate">
+              <view class="content content_top">
+                <view class="content_top_lft">
+                  <!-- 职业名称 -->
+                  <view class="job_name">{{item.tempJobName}}</view>
+                  <!-- 职业要求 -->
+                  <view class="job_details">
+                    <view class="job_city" wx:if="{{item.university!=''}}">{{item.university}}</view>
+                    <view class="job_skill" wx:if="{{item.qualification!=''}}">{{item.qualification}}</view>
+                    <view class="job_edu" wx:if="{{item.graduationYear!=''}}">{{item.graduationYear}}</view>
+                  </view>
+                </view>
+                <!-- 工资 发布时间 -->
+                <view class="content_top_rgt">
+                  <view class="job-salary">
+                    <view class="job_skill">{{item.tempDeliverTime}}</view>
+                  </view>
+                  <view class="job_ad">{{item.company.comIndustry}}</view>
+                </view>
+              </view>
+              <view class="content_btm">
+                <view class="content_btm_lft">
+                  <image class="" src="{{item.avatar?item.avatar:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                </view>
+                <view class="content_btm_rgt">
+                  <view class="cbr_top">{{item.nickName}}</view>
+                  <view class="cbr_btm">
+                    <view class="cbr_btm_lft">
+                      <view class="">{{item.honor}}</view>
+                    </view>
+                    <view class="cbr_btm_rgt">
+                      <view class=""></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </tabs>
+</view>

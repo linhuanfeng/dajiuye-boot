@@ -1,0 +1,79 @@
+<view class="user_info_wrap">
+    <view wx:if="{{userInfo.avatar}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userInfo.avatar}}"></image>
+        <view class="user_info">
+            <image class="user_icon" src="{{userInfo.avatar}}" mode="widthFix" />
+            <view class="user_name">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+    <view wx:else class="user_btn">
+        <button bindtap="getUserProfile"> 点击登录 </button>
+    </view>
+</view>
+<view class="user_content">
+    <view class="user_main">
+        <!-- 历史足迹 -->
+        <view class="history_wrap">
+            <navigator class="" open-type="navigate" url="/pages/feedback_job/index">
+                <view class="his_num">{{sendJobsNums}}</view>
+                <view class="his_name">投递记录</view>
+            </navigator>
+            <navigator class="" open-type="navigate" url="/pages/collect/index">
+                <view class="his_num">{{collectNums}}</view>
+                <view class="his_name">我的收藏</view>
+            </navigator>
+            <navigator class="" open-type="navigate" url="/pages/expect_cities/index">
+                <view class="his_num">{{expectCities}}</view>
+                <view class="his_name">意向城市</view>
+            </navigator>
+            <navigator class="" open-type="navigate" url="/pages/expect_jobs/index">
+                <view class="his_num">{{expectJobs}}</view>
+                <view class="his_name">期望职位</view>
+            </navigator>
+        </view>
+        <!-- 我的订单 -->
+        <veiw class="orders_wrap">
+            <view class="orders_title">求职必备</view>
+            <view class="order_content">
+                <navigator class="" target="" url="/pages/resume/index" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-ding_dan"></view>
+                    <view class="order_name">附件简历</view>
+                </navigator>
+                <navigator class="" target="" url="/pages/order/index" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-shou_cang"></view>
+                    <!-- 公众号推广 -->
+                    <view class="order_name">求职干货</view>
+                </navigator>
+                <navigator class="" target="" url="/pages/group/index" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-receipt-address"></view>
+                    <view class="order_name">求职交流群</view>
+                </navigator> 
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-zuji"></view>
+                    <view class="order_name">发布</view>
+                </navigator>
+            </view>
+        </veiw>
+        <!-- 收货地址管理 -->
+        <view class="address_wrap pre_address">活动广场</view>
+        <view class="address_wrap post_address">福利专区</view>
+        <!-- 应用信息相关 -->
+        <view class="app_info_wrap">
+            <view class="tool_item">
+                <view class="pre_icon-kefu">客服会话</view>
+                <view class="iconfont icon-kefu"></view>
+                <button open-type="contact"></button>
+            </view>
+            <!-- <view class="app_info_item app_info_contact">
+                <text>联系客服</text>
+                <text>400-618-4000</text>
+            </view> -->
+            <navigator url="/pages/feedback/index" class="app_info_item">意见反馈</navigator>
+            <!-- <view class="app_info_item">关于我们</view> -->
+        </view>
+        <!-- 推荐 -->
+        <view class="recommend_wrap">
+            <navigator url="/pages/setting/index" class="app_info_item">设置</navigator>
+        </view>
+    </view>
+</view>

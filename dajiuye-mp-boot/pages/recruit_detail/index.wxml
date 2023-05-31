@@ -1,0 +1,82 @@
+<view class="head">
+    <view class="left">
+        <image class="" src="{{cuUser.avatar?cuUser.avatar:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+    </view>
+    <view class="right">
+        <view class="name">{{cuUser.nickName}}</view>
+        <view class="details">
+            {{cuUser.city}} 男 21
+        </view>
+    </view>
+</view>
+<!-- 简历详情 -->
+<view class="container">
+  <view class="raw" bindtap="openFile">
+    <view class="img iconfont icon-ding_dan"></view>
+    <view class="cnt">
+      <view class="name">{{resumeName}}</view>
+      <view class="time">{{resumeTime}} 更新</view>
+    </view>
+  </view>
+</view>
+<view class="job_desc">
+    <view class="desc_title">手机</view>
+    <view class="desc_details">
+        <!-- <rich-text nodes="{{jobObj.jobDesc1}}"></rich-text> -->
+        <text>{{cuUser.mobile}}</text>
+    </view>
+</view>
+<view class="job_desc">
+    <view class="desc_title">邮箱</view>
+    <view class="desc_details">
+        <!-- <rich-text nodes="{{jobObj.jobDetails}}"></rich-text> -->
+        <text>你好你好你好</text>
+    </view>
+</view>
+<view class="job_skills">
+    <view class="skill_title">教育经历</view>
+    <view class="skill_details">
+        <view class="sl">你好你好你好</view>
+    </view>
+</view>
+<view class="Interview_loca">
+    <view class="loca_title">项目经验</view>
+    <view class="loca_details">你好你好你好</view>
+</view>
+<view class="btm_tool">
+    <!-- <view class="tool_item">
+        <view class="iconfont icon-yixianshi-"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <view class="tool_item" bindtap="handleCollectAdd">
+        <view class="iconfont  {{isCollect?'icon-shoucang':'icon-shou_cang'}}"></view>
+        <view>收藏</view>
+    </view> -->
+    <view class="tool_item btn_buy" bindtap="resumeSubmit" data-state="1">
+        待定
+    </view>
+        <view class="tool_item btn_buy" bindtap="resumeSubmit" data-state="2">
+        简历通过
+    </view>
+        <view class="tool_item btn_buy" bindtap="resumeSubmit" data-state="3">
+        不合适
+    </view>
+</view>
+<!-- <button catchtap='clickPup'>点击底部动画弹窗</button> -->
+<!-- 底部弹窗动画的内容 -->
+<view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}' hover-stop-propagation='true' catchtouchmove='true'>
+    <!-- <view class='pupContent-top'> -->
+    <view class="resume_head">{{submit_stat}}</view>
+    <view class="resume_wrap">
+        <view class="raw" bindtap="">
+            <!-- <view class="iconfont  {{isChosen?'icon-shoucang':'icon-shou_cang'}}"></view> -->
+            <input value="{{textVal}}" bindinput="handleTextInput" type="text" placeholder="可备注留言"/>
+        </view>
+    </view>
+    <view class="tool_item btn_buy" bindtap="sendResume">
+        {{submit_stat}}
+    </view>
+</view>
+<!-- 固定的背景 -->
+<view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'></view>

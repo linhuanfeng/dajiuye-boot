@@ -1,0 +1,190 @@
+page {
+  background: #edece9;
+}
+.index_swiper {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10rpx;
+}
+.index_swiper swiper {
+  width: 95%;
+  height: 250rpx;
+  border-radius: 20rpx;
+  transform: translateY(0);
+  overflow: hidden;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+.index_cate {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 5rpx solid #f3efef;
+}
+.index_cate navigator {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.index_cate navigator image {
+  flex: 1;
+  width: 90rpx;
+}
+.index_cate navigator view {
+  flex: 1;
+}
+.job_wrap {
+  display: flex;
+  justify-content: center;
+  padding: 10rpx;
+  border-bottom: 5rpx solid #f3efef;
+  background-color: #fff;
+}
+.job_wrap .job_title_raw {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.job_wrap .job_title_raw .job_title {
+  display: flex;
+  flex-direction: column;
+}
+.job_wrap .job_title_raw .job_title .txt01 {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.job_wrap .job_title_raw .job_title .txt02 {
+  color: orange;
+  font-size: 27rpx;
+  margin-top: 20rpx;
+  padding: 6rpx;
+  background-color: rgba(243, 237, 151, 0.2);
+}
+.job_wrap .job_title_raw .job_icon navigator {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.job_wrap .job_title_raw .job_icon navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 45rpx;
+  margin-top: 10rpx;
+}
+.job_wrap .job_title_raw .job_icon navigator .icon_below {
+  font-size: 27rpx;
+  margin-top: 5rpx;
+  padding: 6rpx;
+}
+.job_list_wrap {
+  display: flex;
+  justify-content: center;
+  padding: 10rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f3efef;
+}
+.job_list_wrap .job_list_raw {
+  width: 95%;
+  display: flex;
+}
+.job_list_wrap .job_list_raw navigator {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.job_list_wrap .job_list_raw navigator .content_top {
+  flex: 1;
+  margin-top: 0rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft {
+  width: 70%;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft .job_name {
+  font-size: 35rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft .job_details {
+  margin: 12rpx 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft .job_details view {
+  font-size: 27rpx;
+  padding: 4rpx 17rpx;
+  margin-right: 10rpx;
+  color: #645f5f;
+  background-color: #edece9;
+  border-radius: 14%;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_rgt {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_rgt .job-salary {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: var(--themeColor);
+  float: right;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_rgt .job_ad {
+  margin-top: 20rpx;
+  float: right;
+}
+.job_list_wrap .job_list_raw navigator .content_btm {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_lft {
+  flex: 1;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_lft image {
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_top {
+  font-size: 32rpx;
+  flex: 1;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_btm {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rpx 0;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_btm .cbr_btm_lft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #645f5f;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_btm .cbr_btm_rgt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #645f5f;
+}

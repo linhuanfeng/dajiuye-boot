@@ -1,0 +1,8 @@
+host1: 127.0.0.1
+host2: 192.168.42.102
+host3: 106.54.190.66
+spring:
+  profiles:
+    active: dev
+  application:
+    name: dajiuye-service

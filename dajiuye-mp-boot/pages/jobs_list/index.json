@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "SearchInput": "../../components/SearchInput/SearchInput",
+        "tabs": "../../components/tabs/tabs"
+    },
+    "navigationBarTitleText": "职位分类"
+
+}

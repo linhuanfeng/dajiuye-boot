@@ -1,0 +1,222 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "搜索",
+                    "pathName": "pages/search/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "商品列表",
+                    "pathName": "pages/goods_list/index",
+                    "query": "cid=5",
+                    "scene": null
+                },
+                {
+                    "name": "商品详情页",
+                    "pathName": "pages/goods_details/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "设置中心",
+                    "pathName": "pages/setting/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "购物车",
+                    "pathName": "pages/cart/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "支付",
+                    "pathName": "pages/pay/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "授权",
+                    "pathName": "pages/auth/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "登录",
+                    "pathName": "pages/login/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "个人中心",
+                    "pathName": "pages/user/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "订单查询",
+                    "pathName": "pages/order/index",
+                    "query": "type=1",
+                    "scene": null
+                },
+                {
+                    "name": "职位详情",
+                    "pathName": "pages/job_details/index",
+                    "query": "goods_id=43986",
+                    "scene": null
+                },
+                {
+                    "name": "商品收藏",
+                    "pathName": "pages/collect/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "搜索中心",
+                    "pathName": "pages/search/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "意见反馈",
+                    "pathName": "pages/feedback/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "工作列表",
+                    "pathName": "pages/jobs_list/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "校招",
+                    "pathName": "pages/school_recruit/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "校招2",
+                    "pathName": "pages/school_recruit2/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "校招详情页",
+                    "pathName": "pages/school_details/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "社会详情",
+                    "pathName": "pages/society_details/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "测试固定",
+                    "pathName": "pages/category_Test/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "学校列表测试",
+                    "pathName": "pages/goods_list_Test/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "期望城市",
+                    "pathName": "pages/expect_cities/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "职位分类",
+                    "pathName": "pages/expect_jobs/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "公司主页",
+                    "pathName": "pages/company_home/index",
+                    "query": "comId=",
+                    "scene": null
+                },
+                {
+                    "name": "大数据",
+                    "pathName": "pages/analysis/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "category_job",
+                    "pathName": "pages/category_job/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "我的简历",
+                    "pathName": "pages/resume/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "message",
+                    "pathName": "pages/message/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "对话框",
+                    "pathName": "pages/dialog/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "职位定制",
+                    "pathName": "pages/customized/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "发布招聘",
+                    "pathName": "pages/recruit/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "招人",
+                    "pathName": "pages/recruit/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "发布职位",
+                    "pathName": "pages/job_publish/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "/article_details",
+                    "pathName": "pages/article_details/index",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

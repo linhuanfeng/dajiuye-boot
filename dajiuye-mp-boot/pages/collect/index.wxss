@@ -1,0 +1,76 @@
+.job_list_wrap {
+  display: flex;
+  justify-content: center;
+  padding: 10rpx;
+  border-bottom: 1px solid #ccc;
+}
+.job_list_wrap .job_list_raw {
+  width: 95%;
+  display: flex;
+}
+.job_list_wrap .job_list_raw navigator {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.job_list_wrap .job_list_raw navigator .content_top {
+  flex: 1;
+  margin-top: 0rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft .job_name {
+  font-size: 45rpx;
+  font-weight: 600;
+  color: #161616;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft .job_details {
+  margin-top: 0rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_lft .job_details view {
+  padding: 5rpx 8rpx;
+  margin-right: 10rpx;
+  background-color: rgba(128, 124, 124, 0.2);
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_rgt .job-salary {
+  font-size: 40rpx;
+  color: var(--themeColor);
+}
+.job_list_wrap .job_list_raw navigator .content_top .content_top_rgt .job_ad {
+  margin-top: 20rpx;
+  float: right;
+}
+.job_list_wrap .job_list_raw navigator .content_btm {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_lft {
+  flex: 1;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_lft image {
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 30%;
+  margin-right: 20rpx;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_top {
+  flex: 1;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_btm {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.job_list_wrap .job_list_raw navigator .content_btm .content_btm_rgt .cbr_btm .cbr_btm_lft {
+  display: flex;
+  justify-content: start;
+}

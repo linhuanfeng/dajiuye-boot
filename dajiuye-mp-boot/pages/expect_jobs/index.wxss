@@ -1,0 +1,123 @@
+page {
+  height: 100%;
+  background-color: #fff;
+  font-size: 27rpx;
+  letter-spacing: 2rpx;
+  font-family: MicroSoft yahei;
+}
+.cates {
+  height: 100%;
+}
+.cates .expJobWrap {
+  display: flex;
+  justify-content: start;
+  padding: 47rpx 30rpx;
+  width: 100%;
+}
+.cates .expJobWrap .pre_expectJob {
+  font-size: 32rpx;
+  padding: 20rpx;
+  border: 1rpx #fff solid;
+  color: #a5a1a1;
+}
+.cates .expJobWrap .expectJob {
+  width: 30%;
+  padding: 20rpx;
+  margin-right: 10rpx;
+  border: 1rpx #b3d4db solid;
+  border-radius: 10rpx;
+  display: flex;
+  background-color: rgba(223, 222, 222, 0.4);
+}
+.cates .expJobWrap .expectJob .content {
+  font-weight: bold;
+  overflow: hidden;
+  font-size: 25rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--themeColor);
+  flex: 4;
+}
+.cates .expJobWrap .expectJob .del {
+  flex: 1;
+  color: #CCC;
+}
+.cates .cates_container {
+  height: calc(100vh-90rpx);
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+.cates .cates_container .left_menu {
+  flex: 2;
+}
+.cates .cates_container .left_menu .topnav {
+  position: fixed;
+  top: 85rpx;
+  z-index: 99;
+  background: #fff;
+  width: 100%;
+}
+.cates .cates_container .left_menu .menu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(223, 222, 222, 0.4);
+  padding: 50rpx 5rpx;
+  border-left: 9rpx #2f79e900 solid;
+}
+.cates .cates_container .left_menu .lf_last {
+  padding-bottom: 200rpx;
+}
+.cates .cates_container .left_menu .active {
+  border-left: 9rpx #2f79e9ff solid;
+}
+.cates .cates_container .right_contents {
+  flex: 5;
+  padding: 0 30rpx 140rpx 30rpx;
+}
+.cates .cates_container .right_contents .goods_group .goods_title {
+  text-align: center;
+  padding: 15rpx;
+}
+.cates .cates_container .right_contents .goods_group .second {
+  margin-top: 30rpx;
+}
+.cates .cates_container .right_contents .goods_group .goods_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .cates_container .right_contents .goods_group .goods_list view {
+  width: 47%;
+  margin: 6rpx;
+  padding: 17rpx 0rpx;
+  border: 1rpx #fff solid;
+  text-align: center;
+  background-color: rgba(223, 222, 222, 0.4);
+}
+.cates .cates_container .right_contents .goods_group .goods_list .activeJob {
+  border: 1rpx var(--themeColor) solid;
+}
+.btm_tool {
+  position: fixed;
+  bottom: 30rpx;
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+}
+.btm_tool .btn_submit {
+  width: 90%;
+  height: 100%;
+  background-color: var(--themeColor);
+  border-radius: 30rpx;
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

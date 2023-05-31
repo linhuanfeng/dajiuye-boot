@@ -1,0 +1,548 @@
+page {
+    padding-bottom: 100rpx;
+    // background-color: #edece9;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30rpx;
+
+    .job_up {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        padding: 10rpx 0;
+
+        .job_name {
+            font-size: 40rpx;
+            font-weight: 600;
+            color: rgb(22, 22, 22);
+        }
+
+        .job_salary {
+            font-size: 37rpx;
+            color: var(--themeColor);
+        }
+    }
+
+    .job_down {
+        flex: 1;
+        display: flex;
+        justify-content: start;
+        padding: 10rpx 0;
+        font-size: 25rpx;
+        font-weight: 400;
+        color: rgb(22, 22, 22);
+
+        // background-color: rgb(236, 130, 130);
+    }
+}
+
+.com_wrap {
+    // 水平h 垂直v 模糊程度blur
+    // box-shadow: 5rpx 5rpx 5rpx #888888;
+    margin: 17rpx 0;
+    padding: 10rpx 30rpx;
+    border-bottom: 5rpx solid rgb(243, 239, 239);
+    border-top: 5rpx solid rgb(243, 239, 239);
+
+    .com {
+        flex: 1;
+        // background-color: rgba(128, 124, 124, 0.2);
+        display: flex;
+        justify-content: space-around;
+
+        .content_btm_lft {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            image {
+                width: 90rpx;
+                height: 90rpx;
+                border-radius: 50%;
+                margin-left: 20rpx;
+                margin-right: 30rpx;
+            }
+        }
+
+        .content_btm_rgt {
+            flex: 7;
+            display: flex;
+            flex-direction: column;
+
+            .cbr_top {
+                flex: 1;
+                font-size: 34rpx;
+                font-weight: 540;
+                color: rgb(22, 22, 22);
+            }
+
+            .cbr_btm {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+
+                .cbr_btm_lft {
+                    display: flex;
+                    justify-content: start;
+                    font-size: 25rpx;
+                    font-weight: 400;
+                    color: rgb(22, 22, 22);
+                    padding-top: 10rpx;
+
+                    text {
+                        display: inline-block;
+                        // display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // margin: 0 auto;
+                        // text-align: center;
+                    }
+                }
+
+                .cbr_btm_rgt {
+                    font-size: 25rpx;
+                    font-weight: 400;
+                    color: rgb(22, 22, 22);
+                    padding-top: 10rpx;
+
+                    text {
+                        display: inline-block;
+                        // display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // margin: 0 auto;
+                        // text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.job_desc {
+    margin-bottom: 50rpx;
+    padding: 0 30rpx;
+
+    .desc_title {
+        font-size: 33rpx;
+        font-weight: bold;
+        // font-weight: 600;
+        // color: rgb(22, 22, 22);
+    }
+
+    .desc_details {
+        font-size: 30rpx;
+        font-weight: 350;
+        color: rgb(22, 22, 22);
+
+        .d1 {
+            padding: 5rpx 0;
+        }
+    }
+}
+
+.job_skills {
+    margin-bottom: 50rpx;
+    padding: 0 30rpx;
+
+    .skill_title {
+        font-size: 33rpx;
+        font-weight: bold;
+        // color: rgb(22, 22, 22);
+    }
+
+    .skill_details {
+        font-size: 30rpx;
+        // font-weight: 350;
+        color: rgb(22, 22, 22);
+
+        .s1 {
+            padding: 5rpx 0;
+        }
+    }
+}
+
+.Interview_loca {
+    margin-bottom: 50rpx;
+    padding: 0 30rpx;
+
+    .loca_title {
+        font-size: 35rpx;
+        font-weight: 600;
+        color: rgb(22, 22, 22);
+    }
+
+    .loca_details {
+        font-size: 30rpx;
+        font-weight: 350;
+        color: rgb(22, 22, 22);
+        display: flex;
+        justify-content: start;
+    }
+}
+
+.sim {
+    font-size: 33rpx;
+    font-weight: bold;
+    padding: 10rpx 30rpx;
+    background-color: rgb(243, 239, 239);
+}
+
+// 底部弹窗
+.pupContentBG {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.pupContent {
+    width: 100%;
+    background: rgb(243, 239, 239);
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 10rpx #333;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    height: 0;
+    z-index: 999;
+
+    .resume_head {
+        width: 90%;
+        margin: 30rpx auto;
+    }
+
+    .resume_wrap {
+        margin-bottom: 80rpx;
+        .raw {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(223, 222, 222, 0.4);
+            border-radius: 20rpx;
+
+            .img {
+                flex: 1;
+                font-size: 50rpx;
+                padding: 10rpx;
+                // width: 600rpx;
+                // height: 30rpx;
+                color: var(--themeColor);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // background-color: rgb(229, 243, 169);
+            }
+
+            .cnt {
+                flex: 6;
+                display: flex;
+                flex-direction: column;
+                padding: 15rpx 0;
+
+                // background-color: rgb(223, 98, 98);
+                .name {
+                    flex: 1;
+                    font-size: 38rpx;
+
+                }
+
+                .time {
+                    flex: 1;
+                    font-size: 29rpx;
+                }
+            }
+        }
+    }
+
+    .tool_item {
+        flex: 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 24rpx;
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+
+    .btn_buy {
+        flex: 4;
+        background-color: var(--themeColor);
+        border: 1rpx var(--themeColor) solid;
+        border-radius: 20rpx;
+        color: #fff;
+        font-size: 40rpx;
+        padding: 20rpx;
+        font-weight: 500;
+    }
+
+    #isSubmit {
+        color: var(--themeColor);
+        background-color: #fff;
+    }
+}
+
+/* 设置显示的背景 */
+
+.showBG {
+    display: block;
+}
+
+.hideBG {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideBGtUp {
+    from {
+        background: transparent;
+    }
+
+    to {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes slideBGDown {
+    from {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    to {
+        background: transparent;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.openBG {
+    animation: slideBGtUp 0.1s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.closeBG {
+    animation: slideBGDown 0.1s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+/* 设置显示内容 */
+
+.showContent {
+    display: block;
+}
+
+.hideContent {
+    display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideContentUp {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 800rpx;
+    }
+}
+
+@keyframes slideContentDown {
+    from {
+        height: 800rpx;
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+/* 显示或关闭内容时动画 */
+
+.open {
+    animation: slideContentUp 0.2s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.close {
+    animation: slideContentDown 0.2s ease-in both;
+    /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+// 职位列表
+.job_list_wrap{
+    display: flex;
+    justify-content: center;
+    padding: 10rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid rgb(243, 239, 239);
+    // border-bottom: 1px solid #ccc;
+    .job_list_raw{
+        width: 95%;
+        display: flex;
+        navigator{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .content_top{
+                flex: 1;
+                margin-top: 0rpx;
+                display: flex;
+                justify-content: space-between;
+                .content_top_lft{
+                    width: 70%;
+                    .job_name{
+                        font-size: 35rpx;
+                        font-weight: bold;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        // color: rgb(22, 22, 22);
+                    }
+                    .job_details{
+                        margin: 12rpx 0;
+                        display: flex;
+                        justify-content: flex-start;
+                        view{
+                            font-size: 27rpx;
+                            padding: 4rpx 17rpx;
+                            margin-right: 10rpx;
+                            color: #645f5f;
+                            background-color: #edece9;
+                            border-radius: 14%;
+                        }
+                    }
+                }
+                .content_top_rgt{
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    flex-direction: column;
+                    .job-salary{
+                        font-size: 30rpx;
+                        font-weight: bold;
+                        color: var(--themeColor);
+                        float: right;
+                    }
+                    .job_ad{
+                        margin-top: 20rpx;
+                        float: right;
+                    }
+                }
+            }
+            .content_btm{
+                flex: 1;
+                // background-color: rgba(128, 124, 124, 0.2);
+                display: flex;
+                justify-content: space-between;
+                .content_btm_lft{
+                    flex: 1;
+                    image{
+                        float: left;
+                        width: 70rpx;
+                        height: 70rpx;
+                        border-radius: 50%;
+                        margin-right: 30rpx;
+                    }
+                }
+                .content_btm_rgt{
+                    flex: 7;
+                    display: flex;
+                    flex-direction: column;
+                    .cbr_top{
+                        font-size: 32rpx;
+                        // font-weight: 549;
+                        flex:1;
+                    }
+                    .cbr_btm{
+                        flex: 1;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 5rpx 0;
+                        .cbr_btm_lft{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 24rpx;
+                            color: #645f5f;
+                            // font-weight: 547;
+                            // justify-content: start;
+                        }
+                        .cbr_btm_rgt{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 24rpx;
+                            color: #645f5f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btm_tool {
+    border-top: 1rpx solid #ccc;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    display: flex;
+    padding: 10rpx;
+
+    .tool_item {
+        flex: 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 24rpx;
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+
+    .btn_buy {
+        flex: 4;
+        background-color: var(--themeColor);
+        border: 1rpx var(--themeColor) solid;
+        border-radius: 20rpx;
+        color: #fff;
+        font-size: 30rpx;
+        font-weight: 600;
+    }
+
+    #isSubmit {
+        color: var(--themeColor);
+        background-color: #fff;
+    }
+
+}

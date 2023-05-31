@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="wrap">
+  <ec-canvas class="eChart" id="mychart-dom" canvas-id="mycahrt" ec="{{ec}}"></ec-canvas>
+</view>
+<view class="wrap">
+  <ec-canvas class="eChart" id="mychart-dom2" canvas-id="mycahrt2" ec="{{ec2}}"></ec-canvas>
+</view>
+<view class="wrap">
+  <ec-canvas class="eChart" id="mychart-dom3" canvas-id="mycahrt3" ec="{{ec3}}"></ec-canvas>
+</view>
+<view class="wrap">
+  <ec-canvas class="eChart" id="mychart-dom4" canvas-id="mycahrt4" ec="{{ec4}}"></ec-canvas>
+</view>
+
+</view>
+  

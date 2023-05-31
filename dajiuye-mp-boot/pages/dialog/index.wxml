@@ -1,0 +1,44 @@
+<view class="head">
+    <view class="name">{{msgs[0].fromAvatar==userInfo.avatar?msgs[0].toName:msgs[0].fromName}}</view>
+    <view class="title">当前职位：服务端开发工程师-校招/社招/实习</view>
+</view>
+<view class="cates">
+    <view class="cates_container">
+        <!-- 左侧菜单 -->
+        <scroll-view scroll-y class="left_menu">
+            <view class="per_msg" wx:for="{{leftMsgs}}" wx:key="createTime" wx:if="{{item.fromAvatar!=userInfo.avatar}}">
+                <view class="per_img">
+                    <image src="{{toUserInfo.avatar}}" mode="aspectFill" />
+                </view>
+                <view class="per_cnt">
+                    <view>
+                        <text class="" selectable="false" space="false" decode="false">{{item}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <!-- 右侧商品内容 -->
+        <scroll-view scroll-y class="right_contents">
+            <view class="per_msg" wx:for="{{rightMsgs}}" wx:key="createTime">
+                <view class="per_cnt">
+                    <view>
+                        <text class="" selectable="false" space="false" decode="false">{{item}}</text>
+                    </view>
+                </view>
+                <view class="per_img">
+                    <image src="{{userInfo.avatar}}" mode="aspectFill" />
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="btm_wrap">
+    <form class="btm_raw" bindsubmit="submit">
+        <view class="btm_name">
+            <input name="msg" value='{{inputValue}}'  bindinput="inputText" placeholder="请输入"></input>
+        </view>
+        <view class="btm_submit">
+            <button type="" form-type="submit">发送</button>
+        </view>
+    </form>
+</view>

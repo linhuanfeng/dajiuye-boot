@@ -1,0 +1,71 @@
+spring:
+  #MySQL配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${host2}:3406/dajiuye?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # rabbitmq配置
+  rabbitmq:
+    host: ${host2}
+    virtual-host: /
+    port: 5672
+    # 生产端确认回调
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+    username: itcast
+    password: 123
+    listener:
+      simple:
+        acknowledge-mode: manual # 开启手动确认模式
+  kafka:
+    bootstrap-servers: ${host2}:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+mybatis:
+  mapper-locations: classpath*:com/lhf/dajiuye/mapper/acl/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/job/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/message/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/swipper/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/user/*Mapper*.xml
+  #  type-aliases-package: com.lhf.upfs.springbootmybatis.entity
+  #IDENTITY: MYSQL #取回主键的方式
+  #notEmpty: false #insert和update中，是否判断字符串类型!=''
+  configuration:
+    #进行自动映射时，数据以下划线命名，如数据库返回的"order_address"命名字段是否映射为class的"orderAddress"字段。默认为false
+    map-underscore-to-camel-case: true
+    # 输出SQL执行语句 （log4j2本身可以输出sql语句）
+
+# aliyun oss
+# 地域节点
+aliyun.endPoint: oss-cn-shenzhen.aliyuncs.com
+# Bucket 域名
+aliyun.urlPrefix: https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/
+# accessKey Id
+aliyun.accessKeyId:
+# accessKey Secret
+aliyun.accessKeySecret:
+# 你的Bucket名称
+aliyun.bucketName: dajiuye2
+# 目标文件夹
+aliyun.fileHost: test
+
+# 微信小程序的appid和secret
+wx:
+  url: api.weixin.qq.com/sns/jscode2session
+  appid: wxffd8f31f5bb7f05f
+  secret: baa7959cdd43af09c9c5bcb0d3e426ea
+  grant_type: authorization_code
+
+# 发送微信http请求的
+httppool:
+  max_total: 200
+  max_per_route: 100
+  connect_timeout: 5000
+  connection_request_timeout: 1000
+  socket_timeout: 65000
+  validate_after_inactivity: 2000

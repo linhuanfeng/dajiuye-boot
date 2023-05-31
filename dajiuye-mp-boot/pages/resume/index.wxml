@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="raw" bindtap="openFile">
+    <view class="img iconfont icon-ding_dan"></view>
+    <view class="cnt">
+      <view class="name">{{resumeName}}</view>
+      <view class="time">{{resumeTime}}更新</view>
+    </view>
+  </view>
+</view>
+<view class="btm_tool">
+    <!-- <view class="tool_item">
+        <view class="iconfont icon-yixianshi-"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <view class="tool_item" bindtap="handleCollectAdd">
+        <view class="iconfont  {{isCollect?'icon-shoucang':'icon-shou_cang'}}"></view>
+        <view>收藏</view>
+    </view>  -->
+    <view class="tool_item btn_buy" bindtap="touchphoto">从微信中导入</view>
+</view>

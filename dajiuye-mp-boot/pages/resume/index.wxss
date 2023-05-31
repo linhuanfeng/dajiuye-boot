@@ -1,0 +1,81 @@
+page {
+  padding: 30rpx 0;
+  background-color: #fff;
+}
+.container {
+  width: 100%;
+}
+.container .raw {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(223, 222, 222, 0.4);
+  border-radius: 20rpx;
+}
+.container .raw .img {
+  flex: 1;
+  font-size: 50rpx;
+  padding: 10rpx;
+  color: var(--themeColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .raw .cnt {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0;
+}
+.container .raw .cnt .name {
+  flex: 1;
+  font-size: 38rpx;
+}
+.container .raw .cnt .time {
+  flex: 1;
+  font-size: 29rpx;
+}
+.btm_tool {
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  padding: 10rpx;
+}
+.btm_tool .tool_item {
+  flex: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  position: relative;
+}
+.btm_tool .tool_item button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.btm_tool .btn_buy {
+  flex: 4;
+  background-color: var(--themeColor);
+  border: 1rpx var(--themeColor) solid;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.btm_tool #isSubmit {
+  color: var(--themeColor);
+  background-color: #fff;
+}

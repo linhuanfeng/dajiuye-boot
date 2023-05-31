@@ -1,0 +1,49 @@
+<view class="head">
+    <view class="job_up">
+        <view class="job_name">{{interviewObj.title}}</view>
+        <view class="job_salary">{{jobObj.jobSalary}}</view>
+    </view>
+    <view class="job_down">
+        <view class="job_place"><text decode="{{true}}">{{interviewObj.tag}}&nbsp;&nbsp;</text></view>
+        <view class="job_year padr"><text decode="{{true}}">{{interviewObj.updateTime}}&nbsp;{{jobObj.jobTimeSpan}}</text></view>
+        <view class="job_edu padr"><text decode="{{true}}">&nbsp;|&nbsp;{{jobObj.jobEdu}}</text></view>
+    </view>
+</view>
+<!-- 公司介绍 -->
+<navigator url="/pages/company_home/index?comId={{jobObj.jobComId}}" class="com_wrap">
+    <view class="com">
+        <view class="content_btm_lft">
+            <image class="" src="{{'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F003bba6c74ce151d3ce31aaa6cb7c6ecb72683e917605-ekncjt_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641826070&t=55c8ba4bfddd68da8f53d3c112c3375chttps://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/d731ae5e894b45eca768230353621e42_2021-11-24%2020%3A40%3A33-%E6%A0%A1%E6%8B%9B.jpg'}}" mode="aspectFill" />
+        </view>
+        <view class="content_btm_rgt">
+            <view class="cbr_top">一只雄安风力{{jobObj.company.comMinName}}</view>
+            <view class="cbr_btm">
+                <view class="cbr_btm_lft">
+                    <view class="l1"><text decode="{{true}}">{{jobObj.company.comIndustry}}&nbsp;昨天 21:23:12&nbsp;{{jobObj.company.comScale}}</text></view>
+                </view>
+                <view class="cbr_btm_rgt">
+                    <view class=""><text>></text></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</navigator>
+<view class="job_desc">
+    <view class="desc_details">
+        <rich-text nodes="{{interviewObj.content}}"></rich-text>
+    </view>
+</view>
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-yixianshi-"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <view class="tool_item" bindtap="handleCollectAdd">
+        <view class="iconfont  {{isCollect?'icon-shoucang':'icon-shou_cang'}}"></view>
+        <view>收藏</view>
+    </view>
+    <view class="tool_item" bindtap="handleNext">
+        <view>下一篇</view>
+    </view>
+</view>

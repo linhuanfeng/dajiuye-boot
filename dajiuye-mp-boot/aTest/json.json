@@ -1,0 +1,66 @@
+{
+    "message": [{
+            "schId": 1,
+            "schImg1": "https://api-hmugo-web.itheima.net/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg",
+            "schName": "虎牙2021年校招"
+        },
+        {
+            "schId": 2,
+            "schImg1": "https://api-hmugo-web.itheima.net/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg",
+            "schName": "虎牙2021年校招"
+        },
+        {
+            "schId": 3,
+            "schImg1": "https://api-hmugo-web.itheima.net/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg",
+            "schName": "虎牙2021年校招"
+        }
+    ],
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}
+
+{
+    "message": [{
+            "schCreateTime": "",
+            "schComId": "1",
+            "schUpdateTime": "",
+            "schAuthor": "张三",
+            "schId": 1,
+            "schImg3": "https://img.coolcr.cn/2021/08/30/2aed7ec713af0.jpg",
+            "schImg4": "https://img.coolcr.cn/2021/09/03/f9b4adf0f2b06.jpg",
+            "schStat": "",
+            "schImg5": "https://img.coolcr.cn/2021/08/30/f0b258bd5c4ab.jpg",
+            "schImg6": "",
+            "schImg7": "",
+            "schImg8": "",
+            "schViewCnt": "",
+            "schName": "虎牙2022年校招",
+            "schImg1": "https://img.coolcr.cn/2021/08/30/5a7136e08e6b7.jpg",
+            "schImg2": "https://img.coolcr.cn/2021/09/03/d5232004ada41.jpg"
+        },
+        {
+            "schCreateTime": "",
+            "schComId": "2",
+            "schUpdateTime": "",
+            "schAuthor": "李四",
+            "schId": 2,
+            "schImg3": "https://img.coolcr.cn/2021/08/30/2aed7ec713af0.jpg",
+            "schImg4": "https://img.coolcr.cn/2021/09/03/f9b4adf0f2b06.jpg",
+            "schStat": "",
+            "schImg5": "https://img.coolcr.cn/2021/08/30/f0b258bd5c4ab.jpg",
+            "schImg6": "",
+            "schImg7": "",
+            "schImg8": "",
+            "schViewCnt": "",
+            "schName": "虎牙2022年校招",
+            "schImg1": "https://img.coolcr.cn/2021/08/30/5a7136e08e6b7.jpg",
+            "schImg2": "https://img.coolcr.cn/2021/09/03/d5232004ada41.jpg"
+        }
+    ],
+    "meta": {
+        "msg": "获取成功",
+        "status": 200
+    }
+}

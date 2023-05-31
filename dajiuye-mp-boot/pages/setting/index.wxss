@@ -1,0 +1,14 @@
+page {
+  background-color: #f7f5f5;
+}
+.phone_wrap {
+  background-color: #fff;
+}
+.exit_wrap {
+  text-align: center;
+  font-size: 38rpx;
+  color: #f36d6d;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}

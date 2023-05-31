@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "SearchInput": "../../components/SearchInput/SearchInput",
+        "tabs2": "../../components/tabs2/tabs2",
+        "tabs": "../../components/tabs/tabs"
+    },
+    "navigationBarTitleText": "校招"
+}

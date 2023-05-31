@@ -1,0 +1,18 @@
+page {
+  padding: 30rpx;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .wrap {
+  width: 750rpx;
+  height: 600rpx;
+}
+.container .wrap .eChart {
+  width: 50%;
+  height: 50%;
+  background-color: #e5f3be;
+}
