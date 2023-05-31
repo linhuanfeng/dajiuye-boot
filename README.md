@@ -13,7 +13,7 @@
 
 #### 后端技术
 
-Dubbo+SpringBoot+Zookeeper++RabbitMQ+WebSockket+Redis+SpringSecurity+JWT 
+SpringBoot+Zookeeper++RabbitMQ+WebSockket+Redis+SpringSecurity+JWT 
 
 1、使用Token机制+Redis（Lua）解决了接口幂等性问题，使用SpringSecurity控制资源访问权限 
 
