@@ -5,48 +5,9 @@
 
 ![image-20221214153318152](README.assets/image-20221214153318152.png)
 
-## 后端模块
-
-dajiuye-backend
-├── dajiuye-acl-service   # 鉴权模块：shiro
-│   ├── pom.xml
-│   └── src
-├── dajiuye-api   # 
-│   ├── pom.xml
-│   └── src
-├── dajiuye-common # 
-│   ├── pom.xml
-│   └── src
-├── dajiuye-editor # 
-│   ├── pom.xml
-│   └── src
-├── dajiuye-job-service # 
-│   ├── pom.xml
-└── └── src
-
-├── dajiuye-message-service # 
-│   ├── pom.xml
-└── └── src
-
-├── dajiuye-swipper-service # 
-│   ├── pom.xml
-└── └── src
-
-├── dajiuye-token-service # 
-│   ├── pom.xml
-└── └── src
-
-├── dajiuye-user-service # 用户模块
-│   ├── pom.xml
-└── └── src
-
-├── dajiuye-web-app # web入口
-│   ├── pom.xml
-└── └── src
-
 #### 后端技术
 
-Dubbo+SpringBoot+Zookeeper++RabbitMQ+WebSockket+Redis+SpringSecurity+JWT 
+SpringBoot+Zookeeper++RabbitMQ+WebSockket+Redis+SpringSecurity+JWT 
 
 1、使用Token机制+Redis（Lua）解决了接口幂等性问题，使用SpringSecurity控制资源访问权限 
 
@@ -59,17 +20,17 @@ Dubbo+SpringBoot+Zookeeper++RabbitMQ+WebSockket+Redis+SpringSecurity+JWT
 ## 部署运行
 ### 前端
 
-dajiuye-mp
+dajiuye-mp-boot
 
 使用微信开发者工具导入dajiuye-mp即可运行
 
 ### 后端
 
-dajiuye-backend
+dajiuye-backend-boot
 
 1、导入数据库，并更改数据库地址
 
-2、更改zookeeper地址，rabbitmq地址，redis地址，kafka地址
+2、更改zookeeper地址，rabbitmq地址，redis地址，kafka地址，elasticsearch
 
 3、即可启动
 
