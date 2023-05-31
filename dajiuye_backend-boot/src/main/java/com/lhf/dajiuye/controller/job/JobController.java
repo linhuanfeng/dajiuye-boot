@@ -87,7 +87,8 @@ public class JobController {
     @Cacheable
     public Object getJobsByEs(Params params){
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        PageInfo<Job> jobDataList = jobDataService.queryByEs(params);
+//        PageInfo<Job> jobDataList = jobDataService.queryByEs(params);
+        PageInfo<Job> jobDataList = jobDataService.getJobs(params);
         return new CommonResult2<PageInfo>(jobDataList,new Meta("获取成功",200));
     }
 

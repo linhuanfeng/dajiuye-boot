@@ -29,10 +29,10 @@ public interface JobDataMapper extends BaseMapper<Job> {
     @Select("<script>select * from job j,company c where j.jobComId=c.comId " +
 //            "<if test='\"\"!=jobId'>and jobId!=#{jobId} </if>" +
 //            "<if test='\"\"!=#{jobId} and \"\"==#{isSimilar}'>and jobId=#{jobId} </if>" +
-            "<if test='-1!=params.jobType'>where j.jobType=#{jobType} </if> " +
+            "<if test=\"-1!=jobType\">and jobType=#{jobType} </if> " +
             "order by jobReleaseTime desc </script>")
     @ResultMap("com.lhf.dajiuye.mapper.job.JobDataMapper.jobMap") // 引用映射
-    List<Job> getJobs( @Param("params") Params params);
+    List<Job> getJobs(  Params params);
 
     /**
      * 获取职位列表（cid,jobType）

@@ -13,6 +13,7 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 //import com.lhf.dajiuye.api.common.xss.SQLFilter;
 import com.lhf.dajiuye.common.xss.SQLFilter;
+import org.apache.commons.lang3.StringUtils;
 //import org.apache.commons.lang.StringUtils;
 
 import java.util.Map;
@@ -53,18 +54,18 @@ public class Query<T> {
 
 
         //前端字段排序
-//        if(StringUtils.isNotEmpty(orderField) && StringUtils.isNotEmpty(order)){
-//            if(Constant.ASC.equalsIgnoreCase(order)) {
-//                return  page.addOrder(OrderItem.asc(orderField));
-//            }else {
-//                return page.addOrder(OrderItem.desc(orderField));
-//            }
-//        }
+        if(StringUtils.isNotEmpty(orderField) && StringUtils.isNotEmpty(order)){
+            if(Constant.ASC.equalsIgnoreCase(order)) {
+                return  page.addOrder(OrderItem.asc(orderField));
+            }else {
+                return page.addOrder(OrderItem.desc(orderField));
+            }
+        }
 
         //没有排序字段，则不排序
-//        if(StringUtils.isBlank(defaultOrderField)){
-//            return page;
-//        }
+        if(StringUtils.isBlank(defaultOrderField)){
+            return page;
+        }
 
         //默认排序
         if(isAsc) {

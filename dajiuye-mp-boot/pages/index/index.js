@@ -41,7 +41,7 @@ Page({
     QueryParams: {
         query: "",
         cid: "",
-        pageNo: 1,
+        pageNum: 1,
         pageSize: 10,
         // 职位类型
         jobType: -1,
@@ -84,7 +84,7 @@ Page({
     },
     handleTabsItemChange(e) {
         // 重置
-        this.QueryParams.pageNo = 1
+        this.QueryParams.pageNum = 1
         this.totalPages = 1
         // 1 获取被点击的标题索引
         const {
@@ -115,7 +115,7 @@ Page({
     },
     onReachBottom: function () {
         // 1  判断还有没有下一页数据
-        if (this.QueryParams.pageNo >= this.totalPages) {
+        if (this.QueryParams.pageNum >= this.totalPages) {
             // 没有下一页数据
             wx.showToast({
                 title: '没有下一页数据了',
@@ -131,7 +131,7 @@ Page({
             });
 
         } else {
-            this.QueryParams.pageNo++;
+            this.QueryParams.pageNum++;
             this.getJobList(1);
         }
     },
