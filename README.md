@@ -5,16 +5,6 @@
 
 ![image-20221214153318152](README.assets/image-20221214153318152.png)
 
-#### 后端技术
-
-SpringBoot+WebSockket+Redis+SpringSecurity+JWT 
-
-1、使用Token机制+Redis（Lua）解决了接口幂等性问题，使用SpringSecurity控制资源访问权限 
-
-2、基于WebSocket和Stomp协议搭建起聊天室，并基于RabbitMQ对聊天消息异步持久化
-
-3、基于Redis缓存热点职位，并使用分布式锁Redisson解决缓存击穿问题，并搭建Redis-Cluster集群提高扩展性和可用性
-
 ## 部署运行
 
 ### 一、微信小程序端
@@ -39,6 +29,16 @@ dajiuye-manage-system
 
 ## 技术选型
 
+### 后端技术
+
+SpringBoot+WebSockket+Redis+SpringSecurity+JWT 
+
+1、使用Token机制+Redis（Lua）解决了接口幂等性问题，使用SpringSecurity控制资源访问权限 
+
+2、基于WebSocket和Stomp协议搭建起聊天室，并基于RabbitMQ对聊天消息异步持久化
+
+3、基于Redis缓存热点职位，并使用分布式锁Redisson解决缓存击穿问题，并搭建Redis-Cluster集群提高扩展性和可用性
+
 | 技术        | 版本    | 说明                            |
 | ----------- | ------- | ------------------------------- |
 | Spring Boot | 2.7.1   | MVC核心框架                     |
@@ -55,17 +55,11 @@ dajiuye-manage-system
 |             |         |                                 |
 |             |         |                                 |
 
-## 反馈与答疑
+### 前端技术
 
-最后的最后，如果你部署遇到任何疑问，欢迎添加**扣扣**咨询群【417094004】或**微信号**【moon5672369】咨询！开源不易，一定要给我==Star==哦！！
+vue3+ts
 
-如果是初学Java的朋友也可以跟着流程借鉴这些代码，试着实现这个项目，相信能对你的成长有所帮助！
-
-如果有心，不妨请博主喝杯茶::laughing::
-
-<img src="README.assets/image-20230618213213750.png" alt="image-20230618213213750" style="zoom:25%;" />
-
-
+微信小程序开发
 
 ## 演示视频
 
@@ -80,3 +74,15 @@ springboot版本：https://github.com/linhuanfeng/dajiuye-boot
 dubbo版本：https://github.com/linhuanfeng/dajiuye-dubbo
 
 springcloud版本：https://github.com/linhuanfeng/dajiuye-cloud
+
+## 反馈与答疑
+
+最后的最后，如果你部署遇到任何疑问，欢迎添加**扣扣**咨询群【417094004】或**微信号**【moon5672369】咨询！开源不易，一定要给我==Star==哦！！
+
+如果是初学Java的朋友也可以跟着流程借鉴这些代码，试着实现这个项目，相信能对你的成长有所帮助！
+
+如果有心，不妨请博主喝杯茶::laughing::
+
+<img src="README.assets/image-20230618213213750.png" alt="image-20230618213213750" style="zoom:25%;" />
+
+
