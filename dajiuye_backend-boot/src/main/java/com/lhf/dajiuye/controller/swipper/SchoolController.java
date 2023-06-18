@@ -5,9 +5,8 @@ package com.lhf.dajiuye.controller.swipper;
 //import com.lhf.dajiuye.api.bean.swipper.School;
 //import com.lhf.dajiuye.api.service.swipper.SchoolService;
 //import com.lhf.dajiuye.web.app.constants.RedisCacheName;
-import com.lhf.dajiuye.bean.CommonResult;
-import com.lhf.dajiuye.bean.Meta;
 import com.lhf.dajiuye.bean.swipper.School;
+import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
 import com.lhf.dajiuye.service.swipper.SchoolService;
 //import org.apache.dubbo.config.annotation.DubboReference;
@@ -39,8 +38,8 @@ public class SchoolController {
      */
     @GetMapping("/schooldata")
     @Cacheable
-    public Object schoolList(@RequestParam(value = "schoolId",required = false,defaultValue = "0") String schId) throws IOException {
+    public R schoolList(@RequestParam(value = "schoolId",required = false,defaultValue = "0") String schId) throws IOException {
         List<School> schoolDataList = schoolService.getSchoolDataList(Integer.parseInt(schId));
-        return new CommonResult<School>(schoolDataList,new Meta("获取成功",200));
+        return R.ok().put("list",schoolDataList);
     }
 }

@@ -7,6 +7,8 @@ import com.alibaba.fastjson.JSON;
 //import com.auth0.jwt.algorithms.Algorithm;
 //import com.auth0.jwt.interfaces.Claim;
 //import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.util.Assert;
 
 import java.io.UnsupportedEncodingException;
@@ -17,16 +19,15 @@ import java.io.UnsupportedEncodingException;
 public class JwtUtil {
     private static final String SECRET="sdfdsfs"; // 密匙
     public static String generateJwtTokenHMAC(String payLoad){
-        return "";
-//        Assert.notNull(payLoad,"payLoad不能为空");
-//        try {
-//            return  JWT.create()
-//                        .withIssuer("LHF")
-//                        .withClaim("userInfo", JSON.toJSONString(payLoad))
-//                        .sign(Algorithm.HMAC256(SECRET));
-//        } catch (UnsupportedEncodingException e) {
-//            throw new RuntimeException(e);
-//        }
+        Assert.notNull(payLoad,"payLoad不能为空");
+        try {
+            return  JWT.create()
+                        .withIssuer("LHF")
+                        .withClaim("userInfo", JSON.toJSONString(payLoad))
+                        .sign(Algorithm.HMAC256(SECRET));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

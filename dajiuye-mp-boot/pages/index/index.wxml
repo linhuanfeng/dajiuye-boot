@@ -81,7 +81,7 @@
               </view>
               <view class="content_btm">
                 <view class="content_btm_lft">
-                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
+                  <image class="" src="{{item.company.comLogo?item.company.comLogo:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/1c4bf23be5804dcface33a83060d1960_2021-12-12%2014%3A16%3A01-%E9%80%9A%E7%94%A8.jpg'}}" mode="aspectFill" />
                 </view>
                 <view class="content_btm_rgt">
                   <view class="cbr_top">{{item.company.comMinName}}</view>
@@ -129,7 +129,7 @@
               </view>
               <view class="content_btm">
                 <view class="content_btm_lft">
-                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/779ff95e32174d3782251c320d75f4c4_2021-12-12%2014%3A21%3A46-%E9%80%9A%E7%94%A82.jpg'}}" mode="aspectFill" />
+                  <image class="" src="{{item.company.comLogo?item.company.comLogo:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/779ff95e32174d3782251c320d75f4c4_2021-12-12%2014%3A21%3A46-%E9%80%9A%E7%94%A82.jpg'}}" mode="aspectFill" />
                 </view>
                 <view class="content_btm_rgt">
                   <view class="cbr_top">{{item.company.comMinName}}</view>
@@ -176,7 +176,7 @@
               </view>
               <view class="content_btm">
                 <view class="content_btm_lft">
-                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/779ff95e32174d3782251c320d75f4c4_2021-12-12%2014%3A21%3A46-%E9%80%9A%E7%94%A82.jpg'}}" mode="aspectFill" />
+                  <image class="" src="{{item.company.comLogo?item.company.comLogo:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/779ff95e32174d3782251c320d75f4c4_2021-12-12%2014%3A21%3A46-%E9%80%9A%E7%94%A82.jpg'}}" mode="aspectFill" />
                 </view>
                 <view class="content_btm_rgt">
                   <view class="cbr_top">{{item.company.comMinName}}</view>
@@ -223,7 +223,7 @@
               </view>
               <view class="content_btm">
                 <view class="content_btm_lft">
-                  <image class="" src="{{item.jobImg?item.jobImg:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/628d945aa6ea4607b3e07fc3333fce14_2021-12-12%2014%3A23%3A43-%E9%80%9A%E7%94%A83.jpg'}}" mode="aspectFill" />
+                  <image class="" src="{{item.company.comLogo?item.company.comLogo:'https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/test/628d945aa6ea4607b3e07fc3333fce14_2021-12-12%2014%3A23%3A43-%E9%80%9A%E7%94%A83.jpg'}}" mode="aspectFill" />
                 </view>
                 <view class="content_btm_rgt">
                   <view class="cbr_top">{{item.company.comMinName}}</view>

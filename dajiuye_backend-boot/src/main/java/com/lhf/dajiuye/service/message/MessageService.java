@@ -2,15 +2,14 @@ package com.lhf.dajiuye.service.message;
 
 
 
-//import com.lhf.dajiuye.api.bean.chat.Message;
-//import com.lhf.dajiuye.api.bean.chat.MessageDetail;
 
-import com.lhf.dajiuye.bean.chat.Message;
-import com.lhf.dajiuye.bean.chat.MessageDetail;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.lhf.dajiuye.bean.message.Message;
+import com.lhf.dajiuye.bean.message.MessageDetail;
 
 import java.util.List;
 
-public interface MessageService {
+public interface MessageService extends IService<Message> {
     void saveMessage(Message msg);
 
     List<Message> getAllMessage(String openId);

@@ -1,22 +1,12 @@
 package com.lhf.dajiuye.controller.swipper;
 
-//import com.hu.health.common.utils.PageUtils;
-//import com.lhf.dajiuye.api.common.utils.R;
-//import com.lhf.dajiuye.api.bean.CommonResult;
-//import com.lhf.dajiuye.api.bean.Meta;
-//import com.lhf.dajiuye.api.bean.swipper.InterviewBank;
-//import com.lhf.dajiuye.api.service.swipper.InterviewBankService;
-//import com.lhf.dajiuye.api.util.PageUtils;
-//import com.lhf.dajiuye.web.app.constants.RedisCacheName;
-import com.lhf.dajiuye.bean.CommonResult;
-import com.lhf.dajiuye.bean.Meta;
+
 import com.lhf.dajiuye.bean.swipper.InterviewBank;
 import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
 import com.lhf.dajiuye.service.swipper.InterviewBankService;
 import com.lhf.dajiuye.util.PageUtils;
 import lombok.extern.slf4j.Slf4j;
-//import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -43,11 +33,11 @@ public class InterviewBankController {
     @GetMapping("/list")
     @Cacheable
     // @RequiresPermissions("community:area:list")
-    public Object list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = interviewBankService.queryPage(params);
         List<?> list = page.getList();
         List<InterviewBank> collect = list.stream().map(o -> (InterviewBank) o).collect(Collectors.toList());
-        return new CommonResult<InterviewBank>(collect,new Meta("获取成功",200));
+        return R.ok().put("list",collect);
     }
 
 

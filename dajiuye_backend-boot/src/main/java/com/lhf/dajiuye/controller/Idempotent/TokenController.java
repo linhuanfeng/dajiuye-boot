@@ -3,8 +3,7 @@ package com.lhf.dajiuye.controller.Idempotent;
 //import com.lhf.dajiuye.api.bean.CommonResult2;
 //import com.lhf.dajiuye.api.bean.Meta;
 //import com.lhf.dajiuye.api.service.user.ApiIdempotentTokenService;
-import com.lhf.dajiuye.bean.CommonResult2;
-import com.lhf.dajiuye.bean.Meta;
+import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.service.user.ApiIdempotentTokenService;
 //import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +27,8 @@ public class TokenController {
      * @return
      */
     @GetMapping("/create")
-    public Object createToken(){
-        return new CommonResult2<String>(apiIdempotentTokenService.createToken(),new Meta("获取成功",200));
+    public R createToken(){
+        return R.ok().setData(apiIdempotentTokenService.createToken());
     }
 
     // token校验端点不暴露

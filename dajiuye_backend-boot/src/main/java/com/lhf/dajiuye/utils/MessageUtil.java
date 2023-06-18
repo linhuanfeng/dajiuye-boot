@@ -3,7 +3,7 @@ package com.lhf.dajiuye.utils;
 //import com.lhf.dajiuye.api.bean.chat.MessageDetail;
 //import com.lhf.dajiuye.api.bean.user.User;
 
-import com.lhf.dajiuye.bean.chat.MessageDetail;
+import com.lhf.dajiuye.bean.message.MessageDetail;
 import com.lhf.dajiuye.bean.user.User;
 
 import java.util.ArrayList;

@@ -26,8 +26,8 @@ App({
               console.log("获取openId成功")
               // 顺便得到了token,batoken放入缓存中
               console.log(res)
-              that.globalData.token=res.data.message.token
-              let openid = res.data.message.openId
+              that.globalData.token=res.data.data.token
+              let openid = res.data.data.openId
               if (openid.length > 0) {
                 that.globalData.openid = openid
                 that.initSocket();

@@ -7,10 +7,9 @@ import com.github.pagehelper.PageInfo;
 //import com.lhf.dajiuye.api.bean.user.User;
 //import com.lhf.dajiuye.api.service.user.MyUserService;
 //import com.lhf.dajiuye.web.app.constants.RedisCacheName;
-import com.lhf.dajiuye.bean.CommonResult2;
-import com.lhf.dajiuye.bean.Meta;
 import com.lhf.dajiuye.bean.Params2;
 import com.lhf.dajiuye.bean.user.User;
+import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
 import com.lhf.dajiuye.service.user.MyUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -41,9 +40,9 @@ public class UserController {
     @GetMapping("/getUser")
     @Cacheable
 //    @OpenIdHandle
-    public Object getUser(@RequestParam("openId") String openId){
+    public R getUser(@RequestParam("openId") String openId){
         User user = userService.getUserByOpenId(openId);
-        return new CommonResult2<User>(user,new Meta("获取成功",200));
+        return R.ok().setData(user);
     }
 
     /**
@@ -53,8 +52,8 @@ public class UserController {
      */
     @GetMapping("/getusers")
     @Cacheable
-    public Object TGetUsers(Params2 params2){
+    public R TGetUsers(Params2 params2){
         PageInfo<User> users = userService.getUsers(params2);
-        return new CommonResult2<PageInfo>(users,new Meta("获取成功",200));
+        return R.ok().put("list",users);
     }
 }

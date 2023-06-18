@@ -1,12 +1,9 @@
 package com.lhf.dajiuye.service.message.impl;
 
-//import com.lhf.dajiuye.api.bean.chat.Message;
-//import com.lhf.dajiuye.api.bean.chat.MessageDetail;
-//import com.lhf.dajiuye.api.service.message.MessageService;
-//import com.lhf.dajiuye.message.service.mapper.MessageMapper;
-//import org.apache.dubbo.config.annotation.DubboService;
-import com.lhf.dajiuye.bean.chat.Message;
-import com.lhf.dajiuye.bean.chat.MessageDetail;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lhf.dajiuye.bean.message.Message;
+import com.lhf.dajiuye.bean.message.MessageDetail;
 import com.lhf.dajiuye.mapper.message.MessageMapper;
 import com.lhf.dajiuye.service.message.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MessageServiceImpl implements MessageService {
+public class MessageServiceImpl extends ServiceImpl<MessageMapper,Message> implements MessageService {
 
     @Autowired
     MessageMapper mapper;

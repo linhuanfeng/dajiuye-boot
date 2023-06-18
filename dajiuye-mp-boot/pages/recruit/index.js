@@ -150,18 +150,20 @@ Page({
     async getUsersList(tag) {
         var that=this
         const result = await request({ url: "/user/user/getusers", data:this.Params2,header: that.Authorization });
-        this.totalPages = result.pages;
+        // console.log('getUsersList')
+        // console.log(result)
+        this.totalPages = result.list.pages;
         if(tag==1){
             this.setData({
                 // jobList: result.data.message
                 // 拼接数组
-                jobList: [...this.data.jobList, ...result.list]
+                jobList: [...this.data.jobList, ...result.list.list]
             });
             wx.stopPullDownRefresh();
         }else{
             this.setData({
                 // 更新数组
-                jobList: result.list
+                jobList: result.list.list
             });
         }
         wx.setStorageSync("userList", this.data.jobList);

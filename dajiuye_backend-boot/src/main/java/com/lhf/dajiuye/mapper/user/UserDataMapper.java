@@ -1,13 +1,15 @@
 package com.lhf.dajiuye.mapper.user;
 
 //import com.lhf.dajiuye.api.bean.user.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lhf.dajiuye.bean.acl.UserRole;
 import com.lhf.dajiuye.bean.user.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 @Mapper
-public interface UserDataMapper {
+public interface UserDataMapper extends BaseMapper<User> {
     @Select("select * from user where open_id=#{openId}")
     User getUserByOpenId(@Param("openId") String openId);
 
@@ -21,9 +23,9 @@ public interface UserDataMapper {
      * @param state 简历的状态
      * @return
      */
-    @Select("<script> select d.id tempDeliverId,j.jobName temp_job_name,date(d.time) temp_deliver_time,u.resume,u.mobile,u.university ,u.city,u.qualification,u.graduation_year,u.avatar,u.nick_name,u.honor,d.from_user_id,d.to_hr_id,d.state,d.time,d.resume_url,d.job_id from user_deliver d" +
+    @Select("<script> select d.id tempDeliverId,j.job_name temp_job_name,date(d.time) temp_deliver_time,u.resume,u.mobile,u.university ,u.city,u.qualification,u.graduation_year,u.avatar,u.nick_name,u.honor,d.from_user_id,d.to_hr_id,d.state,d.time,d.resume_url,d.job_id from user_deliver d" +
             " inner join user u on d.from_user_id=u.id" +
-            " inner join job j on d.job_id=j.jobId and d.to_hr_id=#{id} <if test=\"''!=state\"> and d.state=#{state}</if> </script>")
+            " inner join job j on d.job_id=j.job_id and d.to_hr_id=#{id} <if test=\"''!=state\"> and d.state=#{state}</if> </script>")
     List<User> getUsers(@Param("id") String id, @Param("state") String state);
 
     @Insert("insert into user(" +

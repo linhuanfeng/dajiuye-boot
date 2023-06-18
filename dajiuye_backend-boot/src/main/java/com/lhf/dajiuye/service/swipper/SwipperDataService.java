@@ -1,16 +1,12 @@
 package com.lhf.dajiuye.service.swipper;
 
 
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.github.pagehelper.PageInfo;
+import com.lhf.dajiuye.bean.PageParam;
+import com.lhf.dajiuye.bean.swipper.Swiper;
 
-//import com.lhf.dajiuye.api.bean.swipper.CatItems;
-//import com.lhf.dajiuye.api.bean.swipper.SwiperData;
 
-import com.lhf.dajiuye.bean.swipper.CatItems;
-import com.lhf.dajiuye.bean.swipper.SwiperData;
-
-import java.util.List;
-
-public interface SwipperDataService {
-    List<CatItems> getcatItemsList() ;
-    List<SwiperData> getswiperDataList() ;
+public interface SwipperDataService extends IService<Swiper> {
+    PageInfo<Swiper> getSwiperDataList(PageParam param);
 }

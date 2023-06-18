@@ -20,7 +20,7 @@ Page({
             {
                 id: 1,
                 value: "实习",
-                isActive: true
+                isActive: false
             },
             {
                 id: 2,
@@ -30,7 +30,7 @@ Page({
             {
                 id: 3,
                 value: "全部",
-                isActive: false
+                isActive: true
             }
         ],
     },
@@ -71,7 +71,7 @@ Page({
                             code: res.code
                         },
                         success(res) {
-                            that.Authorization.token=res.data.message.token
+                            that.Authorization.token=res.data.data.token
                             that.doLoadFunc();
                         }
                     })
@@ -157,7 +157,7 @@ Page({
             header: that.Authorization
         });
         this.setData({
-            swiperList: result
+            swiperList: result.list.list
         })
     },
 
@@ -165,35 +165,35 @@ Page({
     async getCatesList() {
         var that = this
         const result = await request({
-            url: "/swipper/swipper/catitems",
+            url: "/swipper/catItems/catitems",
             header: that.Authorization
         });
         this.setData({
-            catesList: result
+            catesList: result.list.list
         })
     },
     //获取职位信息列表数据
     async getJobList(tag) {
         var that = this
         const result = await request({
-            url: "/job/job/jobsByEs",
+            url: "/job/job/jobsManage",
             data: this.QueryParams,
             header: that.Authorization
         });
-        // console.log(result)
+        console.log(result)
         // 计算总页数
-        this.totalPages = result.pages;
+        this.totalPages = result.list.pages;
         if (tag == 1) {
             this.setData({
                 // jobList: result.data.message
                 // 拼接数组
-                jobList: [...this.data.jobList, ...result.list]
+                jobList: [...this.data.jobList, ...result.list.list]
             });
             wx.stopPullDownRefresh();
         } else {
             this.setData({
                 // 更新数组
-                jobList: result.list
+                jobList: result.list.list
             });
         }
     },

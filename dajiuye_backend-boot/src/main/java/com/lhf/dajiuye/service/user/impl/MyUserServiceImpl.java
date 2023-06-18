@@ -1,5 +1,6 @@
 package com.lhf.dajiuye.service.user.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 //import com.lhf.dajiuye.api.bean.Params2;
@@ -8,7 +9,9 @@ import com.github.pagehelper.PageInfo;
 //import com.lhf.dajiuye.user.service.mapper.UserDataMapper;
 //import org.apache.dubbo.config.annotation.DubboService;
 import com.lhf.dajiuye.bean.Params2;
+import com.lhf.dajiuye.bean.job.Job;
 import com.lhf.dajiuye.bean.user.User;
+import com.lhf.dajiuye.mapper.job.JobDataMapper;
 import com.lhf.dajiuye.mapper.user.UserDataMapper;
 import com.lhf.dajiuye.service.user.MyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class MyUserServiceImpl implements MyUserService {
+public class MyUserServiceImpl extends ServiceImpl<UserDataMapper, User> implements MyUserService {
 
     @Autowired
     UserDataMapper mapper;

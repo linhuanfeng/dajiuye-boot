@@ -13,7 +13,6 @@ import com.lhf.dajiuye.bean.Params;
 import com.lhf.dajiuye.bean.job.Job;
 import com.lhf.dajiuye.mapper.job.JobDataMapper;
 import com.lhf.dajiuye.service.job.JobDataService;
-import com.lhf.dajiuye.service.job.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -26,9 +25,6 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
 
 //    @Autowired
 //    CheckTokenFeignService checkTokenFeignService;
-
-    @Autowired
-    private SearchService searchService;
 
     @Autowired
     private JobDataMapper jobDataMapper;
@@ -65,8 +61,7 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
      * @return
      */
     @Override
-    public PageInfo<Job> getJobs( Params params) {
-
+    public PageInfo<Job> getJobs(Params params) {
         Integer pageNum = params.getPageNum();
         Integer pageSize = params.getPageSize();
         // threadLocal<Page>中设置分页对象Page
@@ -75,11 +70,11 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
         // 本质是一个Page对象
         List<Job> jobDataList = jobDataMapper.getJobs(params);
 
-        int pages=jobDataList.size();
+        int pages = jobDataList.size();
 
-        if(jobDataList instanceof Page){
+        if (jobDataList instanceof Page) {
             Page page = (Page) jobDataList;
-            pages=page.getPages(); // 数据库真正的总页数
+            pages = page.getPages(); // 数据库真正的总页数
         }
 
         // 获取热点职位
@@ -95,7 +90,37 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
     }
 
     /**
+     * 首页职位列表
+     * MySQL数据
+     *
+     * @return
+     */
+    @Override
+    public PageInfo<Job> getJobsManage(Params params) {
+        Integer pageNum = params.getPageNum();
+        Integer pageSize = params.getPageSize();
+        // threadLocal<Page>中设置分页对象Page
+        PageHelper.startPage(pageNum, pageSize);
+
+        // 本质是一个Page对象
+        List<Job> jobDataList = jobDataMapper.getJobsManage(params);
+
+        int pages = jobDataList.size();
+
+        if (jobDataList instanceof Page) {
+            Page page = (Page) jobDataList;
+            pages = page.getPages(); // 数据库真正的总页数
+        }
+
+        PageInfo<Job> pageInfo = new PageInfo<>(jobDataList);
+        pageInfo.setPages(pages); // 设置真正的总页数
+
+        return pageInfo;
+    }
+
+    /**
      * 去重,并把jobDataList尾加到hotJobs中
+     *
      * @param hotJobs
      * @param jobDataList Page分页对象
      * @return hotJobs+jobDataList
@@ -105,9 +130,9 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
             // hotJobs表示缓存没有，返回数据库的就行jobDataList
             return jobDataList;
         }
-        if(hotJobs instanceof ArrayList){
+        if (hotJobs instanceof ArrayList) {
             // 确保只最多扩容一次
-            ((ArrayList<Job>) hotJobs).ensureCapacity(hotJobs.size()+jobDataList.size());
+            ((ArrayList<Job>) hotJobs).ensureCapacity(hotJobs.size() + jobDataList.size());
         }
         Map<String, String> map = new HashMap<>();
         // 将hotJobs放到map
@@ -116,7 +141,7 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
         jobDataList.forEach(job -> {
             if (map.get(job.getJobId()) == null) {
                 // 在不重复的情况下，将jobDataList元素尾加
-                hotJobs.add(0,job);
+                hotJobs.add(0, job);
             }
         });
         return hotJobs;
@@ -147,9 +172,9 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
      * @return
      */
     @Override
-    public PageInfo<Job> getJobsByComId(Params params,String comId) {
-        if(params==null)
-            params=new Params();
+    public PageInfo<Job> getJobsByComId(Params params, String comId) {
+        if (params == null)
+            params = new Params();
         // 这段代码表示，程序开始分页了，page默认值是1，pageSize默认是10，意思是从第1页开始，每页显示10条记录
         PageHelper.startPage(params.getPageNum(), params.getPageSize());
 
@@ -181,7 +206,7 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
      * 每次点赞增加1小时的毫秒数权值
      */
     @Override
-    public void addJobScore(String jobId){
+    public void addJobScore(String jobId) {
         redisService.incrementJobScore(jobId);
     }
 
@@ -225,31 +250,5 @@ public class JobDataServiceImpl extends ServiceImpl<JobDataMapper, Job> implemen
         PageInfo<Job> pageInfo = new PageInfo<>(jobDataList);
 
         return pageInfo;
-    }
-
-    /**
-     * 将mysql数据导入es中
-     */
-    @Override
-    public void jobToElasticSearch()  {
-        Params params = new Params();
-        params.setPageNum(1);
-        params.setPageSize(1000);
-        PageHelper.startPage(params.getPageNum(), params.getPageSize());
-
-        // 本质是一个Page对象
-        List<Job> jobDataList = jobDataMapper.getJobs(params);
-        System.out.println("size:"+jobDataList.size());
-        // 插入es中
-        try {
-            searchService.insert(jobDataList);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    public PageInfo<Job> queryByEs(Params params){
-        return searchService.search(params);
     }
 }

@@ -1,13 +1,14 @@
 package com.lhf.dajiuye.mapper.user;
 
 //import com.lhf.dajiuye.api.bean.user.Userdeliver;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lhf.dajiuye.bean.user.Userdeliver;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
 @Mapper
-public interface UserDeliverMapper {
+public interface UserDeliverMapper extends BaseMapper<Userdeliver> {
     /**
      * 用户投递简历
      * @param userdeliver

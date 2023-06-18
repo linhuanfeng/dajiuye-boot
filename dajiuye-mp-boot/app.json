@@ -32,7 +32,6 @@
     "pages/customized_res/index",
     "pages/recruit/index",
     "pages/recruit_detail/index",
-    "pages/recruit_old/index",
     "pages/community/index"
   ],
   "window": {

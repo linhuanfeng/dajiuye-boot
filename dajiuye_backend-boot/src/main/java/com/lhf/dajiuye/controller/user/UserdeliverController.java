@@ -7,6 +7,7 @@ package com.lhf.dajiuye.controller.user;
 //import com.lhf.dajiuye.web.app.constants.RedisCacheName;
 import com.lhf.dajiuye.bean.user.Userdeliver;
 import com.lhf.dajiuye.common.constants.TopicConstants;
+import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
 import com.lhf.dajiuye.service.message.KafkaService;
 import com.lhf.dajiuye.service.user.UserDeliverService;
@@ -40,13 +41,13 @@ public class UserdeliverController {
      * @return
      */
     @GetMapping(value = "/saveDeliver")
-    public String saveDeliver(@ModelAttribute Userdeliver userdeliver){
+    public R saveDeliver(@ModelAttribute Userdeliver userdeliver){
         userDeliverService.saveDeliver(userdeliver);
         // 异步投递消息
-        executor.submit(()->{
-            kafkaService.sendMessage(TopicConstants.JOB_DELIVERY, userdeliver.getJobId());
-        });
-        return "保存信息成功";
+//        executor.submit(()->{
+//            kafkaService.sendMessage(TopicConstants.JOB_DELIVERY, userdeliver.getJobId());
+//        });
+        return R.ok().setData("保存信息成功");
     }
     /**
      * 更新简历投递状态
@@ -54,8 +55,8 @@ public class UserdeliverController {
      * @return
      */
     @GetMapping(value = "/updateDeliver")
-    public String updateDeliver(@ModelAttribute Userdeliver userdeliver){
+    public R updateDeliver(@ModelAttribute Userdeliver userdeliver){
         userDeliverService.updateDeliver(userdeliver);
-        return "保存信息成功";
+        return R.ok().setData("保存信息成功");
     }
 }

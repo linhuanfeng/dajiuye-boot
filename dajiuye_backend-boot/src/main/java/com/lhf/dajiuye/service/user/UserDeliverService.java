@@ -3,9 +3,11 @@ package com.lhf.dajiuye.service.user;
 
 //import com.lhf.dajiuye.api.bean.user.Userdeliver;
 
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.lhf.dajiuye.bean.job.Job;
 import com.lhf.dajiuye.bean.user.Userdeliver;
 
-public interface UserDeliverService {
+public interface UserDeliverService extends IService<Userdeliver> {
     /**
      * 用户发送简历
      * @param userdeliver

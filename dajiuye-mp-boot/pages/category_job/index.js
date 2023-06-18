@@ -35,9 +35,9 @@ Page({
     async getCates2() {
         var that=this
         const result = await request({ url: "/job/category/jobcatdata",header: that.Authorization });
-        // console.log(result)
+        console.log(result)
         this.setData({
-            Cates2: result
+            Cates2: result.list
         })
         let leftMenuList = this.data.Cates2.map(v => v.lname);
         let rightContent = this.data.Cates2[0].children;

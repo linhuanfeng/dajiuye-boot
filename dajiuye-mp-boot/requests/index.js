@@ -20,7 +20,7 @@ export const request = (params) => {
             url: constants.API_BASE_URL + params.url,
             header:params.header,
             success: (result) => {
-                resolve(result.data.message)
+                resolve(result.data)
             },
             fail: (err) => {
                 rejects(err);

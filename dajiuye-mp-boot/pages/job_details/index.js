@@ -184,9 +184,10 @@ Page({
     // 获取职位详情数据
     async getJobDetail(jobId) {
         var that=this
-        const result = await request({ url: "/job/job/job", data: { jobId }, header: that.Authorization });
+        const result = await request({ url: "/job/job/jobBoot", data: { jobId }, header: that.Authorization });
+        console.log("职位详情")
         console.log(result)
-        this.jobInfoStorage = result;
+        this.jobInfoStorage = result.data;
         // 判断是否都投递过该职位
         this.hasSendJob()
         // 1 获取缓存中的商品收藏的数组
@@ -194,7 +195,7 @@ Page({
         // 判断当前商品是否被收藏
         let isCollect = collects.some(v => v.jobId === this.jobInfoStorage.jobId);
         this.setData({
-            jobObj: result,
+            jobObj: result.data,
             isCollect
         })
     },

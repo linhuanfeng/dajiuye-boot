@@ -15,14 +15,27 @@ import java.io.Serializable;
  * 查询参数
  */
 public class Params implements Serializable {
-    private Integer pageSize = 10;
-    private Integer pageNum = 1;
+    private int pageSize = 10;
+    private int pageNum = 1;
     // 查询的内容
-    String query = "";
+    private String query = "";
     // 分类id
-    String cid = "";
+    private String cid = "";
     // 职位类型，1实习，2校招，3社招
     public Integer jobType = -1;
+    // 学历
+    private String jobEdu = "";
     private String jobAge = "";
+    // 薪资
     private String jobSalary = "";
+    // 城市
+    private String city="";
+    // 公司规模
+    private String com_scale="";
+    public void adjust(){
+        city=city.replaceAll("市","");
+        if(jobType==null){
+            jobType=-1;
+        }
+    }
 }

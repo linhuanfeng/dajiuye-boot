@@ -8,8 +8,6 @@ package com.lhf.dajiuye.controller.swipper;
 //import com.lhf.dajiuye.api.service.swipper.QuestionBankService;
 //import com.lhf.dajiuye.api.util.PageUtils;
 //import com.lhf.dajiuye.web.app.constants.RedisCacheName;
-import com.lhf.dajiuye.bean.CommonResult;
-import com.lhf.dajiuye.bean.Meta;
 import com.lhf.dajiuye.bean.swipper.QuestionBank;
 import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
@@ -42,11 +40,11 @@ public class QuestionBankController {
     @GetMapping("/list")
     // @RequiresPermissions("community:area:list")
     @Cacheable
-    public Object list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = questionBankService.queryPage(params);
         List<?> list = page.getList();
         List<QuestionBank> collect = list.stream().map(o -> (QuestionBank) o).collect(Collectors.toList());
-        return new CommonResult<QuestionBank>(collect,new Meta("获取成功",200));
+        return R.ok().put("list",collect);
     }
 
 

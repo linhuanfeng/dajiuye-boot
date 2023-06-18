@@ -5,9 +5,9 @@ package com.lhf.dajiuye.controller.swipper;
 //import com.lhf.dajiuye.api.bean.swipper.Province;
 //import com.lhf.dajiuye.api.service.swipper.AreaService;
 //import com.lhf.dajiuye.web.app.constants.RedisCacheName;
-import com.lhf.dajiuye.bean.CommonResult;
-import com.lhf.dajiuye.bean.Meta;
+import com.lhf.dajiuye.bean.Cascade;
 import com.lhf.dajiuye.bean.swipper.Province;
+import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
 import com.lhf.dajiuye.service.swipper.AreaService;
 //import org.apache.dubbo.config.annotation.DubboReference;
@@ -36,8 +36,20 @@ public class AreaController {
      */
     @GetMapping("/placedata")
     @Cacheable
-    public Object placeList() {
+    public R placeList() {
         List<Province> provinceDataList = areaService.getFullPlaceDataList();
-        return new CommonResult<Province>(provinceDataList,new Meta("获取成功",200));
+        return R.ok().put("list",provinceDataList);
+    }
+
+    /**
+     * 获取地点信息-管理系统
+     * @return
+     * @throws IOException
+     */
+    @GetMapping("/placedataManage")
+    @Cacheable
+    public R placeListManage() {
+        List<Cascade> cascades = areaService.getFullPlaceDataListCascade();
+        return R.ok().put("list",cascades);
     }
 }

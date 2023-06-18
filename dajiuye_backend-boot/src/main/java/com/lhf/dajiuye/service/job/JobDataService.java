@@ -24,11 +24,17 @@ public interface JobDataService extends IService<Job> {
     void saveJob(Job job);
 
     /**
-     * 获取就业列表信息
+     * 获取就业列表信息-mysql+redis
      * @param params
      * @return
      */
     PageInfo<Job> getJobs(Params params);
+    /**
+     * 获取就业列表信息-mysql
+     * @param params
+     * @return
+     */
+    PageInfo<Job> getJobsManage(Params params);
 
     PageInfo<Job> getJobsByCid(Params params);
 
@@ -74,11 +80,4 @@ public interface JobDataService extends IService<Job> {
      * @return
      */
     PageInfo<Job> query(Params params);
-
-    /**
-     * 将mysql数据导入es中
-     */
-    void jobToElasticSearch();
-
-    PageInfo<Job> queryByEs(Params params);
 }

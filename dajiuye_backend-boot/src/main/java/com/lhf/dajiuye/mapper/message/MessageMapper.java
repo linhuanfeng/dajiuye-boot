@@ -2,15 +2,16 @@ package com.lhf.dajiuye.mapper.message;
 
 //import com.lhf.dajiuye.api.bean.chat.Message;
 //import com.lhf.dajiuye.api.bean.chat.MessageDetail;
-import com.lhf.dajiuye.bean.chat.Message;
-import com.lhf.dajiuye.bean.chat.MessageDetail;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lhf.dajiuye.bean.message.Message;
+import com.lhf.dajiuye.bean.message.MessageDetail;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
 @Mapper
-public interface MessageMapper {
+public interface MessageMapper extends BaseMapper<Message> {
     /**
      * 获取两个openId对应用户的所有消息
      * @param msg

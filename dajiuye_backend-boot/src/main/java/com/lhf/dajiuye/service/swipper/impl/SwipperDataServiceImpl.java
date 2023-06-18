@@ -1,12 +1,12 @@
 package com.lhf.dajiuye.service.swipper.impl;
 
-//import com.lhf.dajiuye.api.bean.swipper.CatItems;
-//import com.lhf.dajiuye.api.bean.swipper.SwiperData;
-//import com.lhf.dajiuye.api.service.swipper.SwipperDataService;
-//import com.lhf.dajiuye.swipper.service.mapper.SwiperDataMapper;
-//import org.apache.dubbo.config.annotation.DubboService;
-import com.lhf.dajiuye.bean.swipper.CatItems;
-import com.lhf.dajiuye.bean.swipper.SwiperData;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.lhf.dajiuye.bean.PageParam;
+import com.lhf.dajiuye.bean.swipper.Swiper;
 import com.lhf.dajiuye.mapper.swipper.SwiperDataMapper;
 import com.lhf.dajiuye.service.swipper.SwipperDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class SwipperDataServiceImpl implements SwipperDataService {
+public class SwipperDataServiceImpl extends ServiceImpl<SwiperDataMapper, Swiper> implements SwipperDataService {
 
     @Autowired
     private SwiperDataMapper mapper;
@@ -28,21 +28,25 @@ public class SwipperDataServiceImpl implements SwipperDataService {
      * @throws IOException
      */
     @Override
-    public List<SwiperData> getswiperDataList() {
-        System.out.println("service22222222");
-        List<SwiperData> swiperDataList = mapper.getSwiperDataList();
-        return swiperDataList;
-    }
+    public PageInfo<Swiper> getSwiperDataList(PageParam param) {
+        Integer pageNum = param.getPageNum();
+        Integer pageSize = param.getPageSize();
+        // threadLocal<Page>中设置分页对象Page
+        PageHelper.startPage(pageNum, pageSize);
 
-    /**
-     * 获取分类导航栏数据
-     *
-     * @return
-     * @throws IOException
-     */
-    @Override
-    public List<CatItems> getcatItemsList() {
-        List<CatItems> catItemsList = mapper.getcatItemsDataList();
-        return catItemsList;
+        // 本质是一个Page对象
+        List<Swiper> list = list();
+
+        int pages = list.size();
+
+        if (list instanceof Page) {
+            Page page = (Page) list;
+            pages = page.getPages(); // 数据库真正的总页数
+        }
+
+        PageInfo<Swiper> pageInfo = new PageInfo<>(list);
+        pageInfo.setPages(pages); // 设置真正的总页数
+
+        return pageInfo;
     }
 }

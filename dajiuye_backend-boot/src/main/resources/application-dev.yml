@@ -9,51 +9,6 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  # rabbitmq配置
-  rabbitmq:
-    host: ${host2}
-    virtual-host: /
-    port: 5672
-    # 生产端确认回调
-    publisher-confirm-type: correlated
-    publisher-returns: true
-    template:
-      mandatory: true
-    username: itcast
-    password: 123
-    listener:
-      simple:
-        acknowledge-mode: manual # 开启手动确认模式
-  kafka:
-    bootstrap-servers: ${host2}:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
-mybatis:
-  mapper-locations: classpath*:com/lhf/dajiuye/mapper/acl/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/job/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/message/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/swipper/*Mapper*.xml,classpath*:com/lhf/dajiuye/mapper/user/*Mapper*.xml
-  #  type-aliases-package: com.lhf.upfs.springbootmybatis.entity
-  #IDENTITY: MYSQL #取回主键的方式
-  #notEmpty: false #insert和update中，是否判断字符串类型!=''
-  configuration:
-    #进行自动映射时，数据以下划线命名，如数据库返回的"order_address"命名字段是否映射为class的"orderAddress"字段。默认为false
-    map-underscore-to-camel-case: true
-    # 输出SQL执行语句 （log4j2本身可以输出sql语句）
-
-# aliyun oss
-# 地域节点
-aliyun.endPoint: oss-cn-shenzhen.aliyuncs.com
-# Bucket 域名
-aliyun.urlPrefix: https://dajiuye2.oss-cn-shenzhen.aliyuncs.com/
-# accessKey Id
-aliyun.accessKeyId:
-# accessKey Secret
-aliyun.accessKeySecret:
-# 你的Bucket名称
-aliyun.bucketName: dajiuye2
-# 目标文件夹
-aliyun.fileHost: test
-
 # 微信小程序的appid和secret
 wx:
   url: api.weixin.qq.com/sns/jscode2session
@@ -69,3 +24,39 @@ httppool:
   connection_request_timeout: 1000
   socket_timeout: 65000
   validate_after_inactivity: 2000
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+#  typeAliasesPackage: com.baomidou.springboot.entity
+#  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+#    id-type: 0
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+#    field-strategy: 2
+    #驼峰下划线转换
+#    db-column-underline: true
+    #刷新mapper 调试神器
+#    refresh-mapper: true
+    #数据库大写下划线转换
+#    capital-mode: false
+    #序列接口实现类配置
+    #key-generator: com.baomidou.springboot.xxx
+    #逻辑删除配置
+    #logic-delete-value: 0
+    #logic-not-delete-value: 1
+    #自定义填充策略接口实现
+    #meta-object-handler: com.baomidou.springboot.xxx
+    #自定义SQL注入器
+    #sql-injector: com.baomidou.springboot.xxx
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+logging:
+  level:
+    root: info
+    com:
+      lhf:
+        dajiuye:
+          mapper:
+            debug

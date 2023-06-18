@@ -1,6 +1,5 @@
 package com.lhf.dajiuye.bean.swipper;
 
-//import com.lhf.dajiuye.api.bean.swipper.City;
 import lombok.Data;
 import lombok.ToString;
 

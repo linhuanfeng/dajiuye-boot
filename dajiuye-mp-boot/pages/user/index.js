@@ -112,7 +112,7 @@ Page({
         console.log("handleWXMsg==>结果")
         console.log(result)
         this.setData({
-            userInfo: result
+            userInfo: result.data
         })
 
         // 设置用户简历

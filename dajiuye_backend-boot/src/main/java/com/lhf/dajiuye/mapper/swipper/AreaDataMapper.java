@@ -3,6 +3,9 @@ package com.lhf.dajiuye.mapper.swipper;
 //import com.lhf.dajiuye.api.bean.swipper.City;
 //import com.lhf.dajiuye.api.bean.swipper.District;
 //import com.lhf.dajiuye.api.bean.swipper.Province;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lhf.dajiuye.bean.acl.UserRole;
+import com.lhf.dajiuye.bean.swipper.Area;
 import com.lhf.dajiuye.bean.swipper.City;
 import com.lhf.dajiuye.bean.swipper.District;
 import com.lhf.dajiuye.bean.swipper.Province;
@@ -12,7 +15,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper
-public interface AreaDataMapper {
+public interface AreaDataMapper extends BaseMapper<Area> {
     /**
      * 获取省份信息
      * @return

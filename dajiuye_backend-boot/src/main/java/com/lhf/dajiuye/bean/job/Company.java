@@ -10,18 +10,18 @@ import java.io.Serializable;
 public class Company implements Serializable {
     String comId;
     String comFullName;
+    String comMinName;
     String comAuthCapital;
-    String comIndustry;
+    String comScale;
+    String comClass;
     String comMail;
+    String comIndustry;
+    String comLogo;
     String comAddr;
     String comWebsite;
     String comIntro;
-    String comMinName;
-    String comScale;
     String comLicense;
-    String comLogo;
-    String comClass;
-    String IncorporationDate;
+    String incorporationDate;
     String comWelfare;
     String comLinks;
 }

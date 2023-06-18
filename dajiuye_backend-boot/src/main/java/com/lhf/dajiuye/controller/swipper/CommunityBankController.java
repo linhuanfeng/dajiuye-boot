@@ -8,8 +8,6 @@ package com.lhf.dajiuye.controller.swipper;
 //import com.lhf.dajiuye.api.service.swipper.CommunityBankService;
 //import com.lhf.dajiuye.api.util.PageUtils;
 //import com.lhf.dajiuye.web.app.constants.RedisCacheName;
-import com.lhf.dajiuye.bean.CommonResult;
-import com.lhf.dajiuye.bean.Meta;
 import com.lhf.dajiuye.bean.swipper.CommunityBank;
 import com.lhf.dajiuye.common.utils.R;
 import com.lhf.dajiuye.constants.RedisCacheName;
@@ -43,11 +41,11 @@ public class CommunityBankController {
     @GetMapping("/list")
     @Cacheable
     // @RequiresPermissions("community:area:list")
-    public Object list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = communityBankService.queryPage(params);
         List<?> list = page.getList();
         List<CommunityBank> collect = list.stream().map(o -> (CommunityBank) o).collect(Collectors.toList());
-        return new CommonResult<CommunityBank>(collect,new Meta("获取成功",200));
+        return R.ok().put("list",collect);
     }
 
 

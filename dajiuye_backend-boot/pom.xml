@@ -25,7 +25,6 @@
         <httpcore.version>4.4.13</httpcore.version>
         <velocity.version>1.7</velocity.version>
         <pagehelper.spring.boot.version>1.2.5</pagehelper.spring.boot.version>
-        <mysql.version>5.1.6</mysql.version>
         <servlet.version>4.0.1</servlet.version>
         <javax.validation.version>2.0.1.Final</javax.validation.version>
         <hibernate.validator.version>6.0.12.Final</hibernate.validator.version>
@@ -39,10 +38,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>elasticsearch-rest-high-level-client</artifactId>
         </dependency>
         <!--logback-->
         <dependency>
@@ -89,7 +84,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
         </dependency>
         <!--druid-->
         <dependency>
@@ -102,6 +96,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>2.0.13</version>
+        </dependency>
+        <!--websocket-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
         <!--junit-->
         <dependency>
@@ -123,16 +122,6 @@
             <groupId>au.com.dius.pact.provider</groupId>
             <artifactId>junit</artifactId>
             <version>4.2.20</version>
-        </dependency>
-        <!--kafka-->
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
-        <!--使用rabbitmq作为stomp的消息代理-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         <!--logback-->
         <dependency>
@@ -169,12 +158,6 @@
             <version>${servlet.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--mysql-connector-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
-        </dependency>
         <!--druid-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -190,6 +173,12 @@
             <groupId>au.com.dius.pact.provider</groupId>
             <artifactId>junit</artifactId>
             <version>4.2.20</version>
+        </dependency>
+        <!--Jwt 使用HS256-->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 

@@ -69,7 +69,7 @@ Page({
             header: that.Authorization
         });
         that.setData({
-            allMessage: result
+            allMessage: result.list
         })
     },
     // 跳转到具体的聊天页面

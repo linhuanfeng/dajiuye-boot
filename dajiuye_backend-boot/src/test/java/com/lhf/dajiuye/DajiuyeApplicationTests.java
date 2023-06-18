@@ -2,9 +2,18 @@ package com.lhf.dajiuye;
 
 //import com.lhf.dajiuye.domain.Message;
 //import com.lhf.dajiuye.domain.MessageDetail;
+
+import com.lhf.dajiuye.mapper.user.UserDataMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @SpringBootTest
 class DajiuyeApplicationTests {
@@ -17,7 +26,7 @@ class DajiuyeApplicationTests {
     }
 
     @Test
-    void getAllMessageTest(){
+    void getAllMessageTest() {
 //        List<Message> allMessage = userDataMapper.getAllMessage("222");
 //        for (Message message : allMessage) {
 //            System.out.println(message);
@@ -25,7 +34,7 @@ class DajiuyeApplicationTests {
     }
 
     @Test
-    void getAllMessageDetailTest(){
+    void getAllMessageDetailTest() {
 //        List<MessageDetail> allMessageDetail = userDataMapper.getAllMessageDetail("222");
 //        for (MessageDetail messageDetail : allMessageDetail) {
 //            System.out.println(messageDetail);
@@ -33,7 +42,7 @@ class DajiuyeApplicationTests {
     }
 
     @Test
-    void MessageUtilTest(){
+    void MessageUtilTest() {
 //        List<MessageDetail> allMessageDetail = userDataMapper.getAllMessageDetail("222");
 //        MessageUtil.mergeMsg(allMessageDetail,"222");
     }

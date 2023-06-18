@@ -1,13 +1,15 @@
 package com.lhf.dajiuye.service.user;
 
 //import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import com.lhf.dajiuye.bean.Params2;
+import com.lhf.dajiuye.bean.job.Job;
 import com.lhf.dajiuye.bean.user.User;
 //import com.lhf.dajiuye.api.bean.Params2;
 //import com.lhf.dajiuye.api.bean.user.User;
 
-public interface MyUserService {
+public interface MyUserService extends IService<User> {
 
     User getUserByOpenId(String openId);
 

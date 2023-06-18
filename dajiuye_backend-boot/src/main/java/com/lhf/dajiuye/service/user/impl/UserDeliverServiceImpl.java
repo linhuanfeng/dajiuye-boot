@@ -4,7 +4,10 @@ package com.lhf.dajiuye.service.user.impl;
 //import com.lhf.dajiuye.api.service.user.UserDeliverService;
 //import com.lhf.dajiuye.user.service.mapper.UserDeliverMapper;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lhf.dajiuye.bean.job.Job;
 import com.lhf.dajiuye.bean.user.Userdeliver;
+import com.lhf.dajiuye.mapper.job.JobDataMapper;
 import com.lhf.dajiuye.mapper.user.UserDeliverMapper;
 import com.lhf.dajiuye.service.user.UserDeliverService;
 import org.springframework.stereotype.Service;
@@ -12,7 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service
-public class UserDeliverServiceImpl implements UserDeliverService {
+public class UserDeliverServiceImpl extends ServiceImpl<UserDeliverMapper, Userdeliver> implements UserDeliverService {
 
     @Resource
     private UserDeliverMapper mapper;
