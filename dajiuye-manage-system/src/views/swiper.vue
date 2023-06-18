@@ -1,0 +1,199 @@
+<template>
+  <div>
+    <div class="container">
+      <!--  -->
+      <el-table :data="tableData" border class="table" ref="multipleTable" header-cell-class-name="table-header">
+        <el-table-column prop="id" :show-overflow-tooltip="true" width="155" label="id" align="center">
+        </el-table-column>
+        <el-table-column prop="title" :show-overflow-tooltip="true" width="155" label="title" align="center">
+        </el-table-column>
+        <el-table-column prop="navigatorUrl" :show-overflow-tooltip="true" label="jobName" width="155"
+          align="center"></el-table-column>
+        <el-table-column prop="goodsId" :show-overflow-tooltip="true" label="goodsId" width="155"
+          align="center"></el-table-column>
+        <el-table-column label="头像(查看大图)" align="center">
+          <template #default="scope">
+            <el-image class="table-td-thumb" :src="scope.row.imageSrc" :z-index="10"
+              :preview-src-list="[scope.row.imageSrc]" preview-teleported>
+            </el-image>
+          </template>
+        </el-table-column>
+        <el-table-column label="操作" width="220" align="center">
+          <template #default="scope">
+            <el-button text :icon="Edit" @click="handleEdit(scope.$index, scope.row)" v-permiss="15">
+              编辑
+            </el-button>
+            <el-button text :icon="Delete" class="red" @click="handleDelete(scope.row)" v-permiss="16">
+              删除
+            </el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+      <div class="pagination">
+        <el-pagination background layout="total, prev, pager, next" :current-page="PageParam.pageIndex"
+          :page-size="PageParam.pageSize" :total="pageTotal" @current-change="handlePageChange"></el-pagination>
+      </div>
+    </div>
+
+    <!-- 编辑弹出框 -->
+    <el-dialog title="编辑" v-model="editVisible" width="30%">
+      <el-form label-width="70px">
+        <el-form-item label="id" label-width="120px">
+          <el-input disabled v-model="form.id"></el-input>
+        </el-form-item>
+        <el-form-item label="imageSrc" label-width="120px">
+          <el-input v-model="form.imageSrc"></el-input>
+        </el-form-item>
+        <el-form-item label="title" label-width="120px">
+          <el-input v-model="form.title"></el-input>
+        </el-form-item>
+        <el-form-item label="goodsId" label-width="120px">
+          <el-input v-model="form.goodsId"></el-input>
+        </el-form-item>
+        <el-form-item label="navigatorUrl" label-width="120px">
+          <el-input v-model="form.navigatorUrl"></el-input>
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="editVisible = false">取 消</el-button>
+          <el-button type="primary" @click="saveEdit">确 定</el-button>
+        </span>
+      </template>
+    </el-dialog>
+  </div>
+</template>
+
+<script setup lang="ts" name="basetable">
+import { ref, reactive } from 'vue';
+import { ElMessage, ElMessageBox } from 'element-plus';
+import { swiperdata, updateSwiper } from '../api/index';
+
+const isEdit = ref(false)
+
+const tableData = ref<Swiper[]>([]);
+const pageTotal = ref(0);
+const PageParam = reactive<PageParam>({
+  pageSize: 5,
+  pageNum: 1
+});
+// 首页分类列表
+const getSwiper = () => {
+  swiperdata(PageParam).then(res => {
+    console.log(res)
+    tableData.value = res.data.list.list;
+    pageTotal.value = res.data.list.total;
+  });
+};
+getSwiper();
+// 分页导航
+const handlePageChange = (val: number) => {
+  PageParam.pageNum = val;
+  getSwiper();
+};
+// 删除操作
+const handleDelete = (row: Job) => {
+  // console.log(row)
+  deleteParam.jobId = row.jobId
+  // 二次确认删除
+  ElMessageBox.confirm('确定要删除吗？', '提示', {
+    type: 'warning'
+  })
+    .then(() => {
+      deleteJob(deleteParam).then(res => {
+        console.log(res)
+        if (res.data.data) {
+          ElMessage.success('删除成功');
+          getJobs()
+        } else {
+          ElMessage.error('删除失败')
+        }
+      }).catch((e) => {
+        console.log(e)
+        ElMessage.error('删除失败')
+      });
+    })
+
+};
+// 表格编辑时弹窗和保存
+const editVisible = ref(false);
+// 更新导航
+const form = reactive<Swiper>({
+  id: '',
+  imageSrc: '',
+  title: '',
+  goodsId: 0,
+  navigatorUrl: ''
+});
+// 更新导航
+const update = () => {
+  // 二次确认删除
+  ElMessageBox.confirm('确定更新吗？', '提示', {
+    type: 'warning'
+  })
+    .then(() => {
+      updateSwiper(form).then(res => {
+        console.log(res)
+        if (res.data.data) {
+          ElMessage.success('更新成功');
+          getSwiper()
+        } else {
+          ElMessage.error('更新失败')
+        }
+      }).catch((e) => {
+        console.log(e)
+        ElMessage.error('更新失败')
+      });
+    })
+    .catch(() => { });
+}
+let idx: number = -1;
+const handleEdit = (index: number, row: any) => {
+  idx = index;
+  console.log(row)
+  form.id = row.id
+  form.imageSrc = row.imageSrc,
+    form.title = row.title,
+    form.goodsId = row.goodsId,
+    form.navigatorUrl = row.navigatorUrl,
+    editVisible.value = true;
+};
+const saveEdit = () => {
+  editVisible.value = false;
+  update();
+};
+</script>
+
+<style scoped>
+.handle-box {
+  margin-bottom: 20px;
+}
+
+.handle-select {
+  width: 120px;
+}
+
+.handle-input {
+  width: 300px;
+}
+
+.table {
+  width: 100%;
+  font-size: 14px;
+}
+
+.red {
+  color: #F56C6C;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.table-td-thumb {
+  display: block;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+</style>
